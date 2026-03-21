@@ -7,6 +7,27 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.1.0] — 2026-03-21
+
+Subcommand help, persistent audit scorecards, and command prompt harmonization.
+
+### Added
+
+- **`/hacky-hours help <command>`** — detailed per-command help for all 10 commands (ideate, design, roadmap, build, iterate, audit, sync, adopt, migrate, dry-run). Shows what the command does, when it's done, and what to run next.
+- **Audit scorecards (Phase 5)** — after running `/hacky-hours audit`, optionally save results as a persistent Markdown scorecard in `audits/`. Scorecards capture secrets scan, doc readiness, git status, and next steps in a standardized, dated format (`YYYY-MM-DD-audit.md`).
+- **`audits/` directory** — added to scaffold structure and `.claudeignore` defaults. Stores persistent audit scorecards.
+- **Context preambles** — Iterate, Sync, Audit, Adopt, and Migrate workflows now have "Context to read before starting" sections, matching the pattern already used by Levels 1–4.
+- **`hacky-hours/` framework artifacts** — dogfooding: the framework's own PRODUCT_OVERVIEW, ARCHITECTURE, SECURITY_PRIVACY, LICENSING, ACCESSIBILITY, ROADMAP, BACKLOG, and CHANGELOG now live under `hacky-hours/`.
+
+### Changed
+
+- **Scaffold structure** — now creates `audits/` directory alongside `archive/`.
+- **Generated `CLAUDE.md`** — scaffold now notes that paths should be substituted when ROOT_PATH differs from `hacky-hours/`.
+- **Adopt file list** — now matches what Scaffold creates: includes `02-design/README.md`, `02-design/decisions/`, `03-roadmap/ROADMAP.md`, and `audits/`.
+- **Help message** — updated to show `help <cmd>` option and audit scorecard description.
+
+---
+
 ## [1.0.1] — 2026-03-20
 
 ### Fixed
