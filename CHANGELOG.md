@@ -7,6 +7,25 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.5.0] — 2026-03-20
+
+Quality-of-life improvements to the slash command: new utility arguments, version tracking, and a dev/release naming distinction.
+
+### Added
+
+- **`/hacky-hours help`** — prints all available arguments and a link to the repo
+- **`/hacky-hours version`** — prints the installed command version
+- **`/hacky-hours status`** — surveys the project and reports the current framework level in one sentence, with no interactive menu
+- **`/hacky-hours checklist`** — prints the pre-merge checklist directly, without navigating through the full build flow
+- **Version string** (`<!-- version: 0.5.0 -->`) embedded in the command file so the version is always readable
+
+### Changed
+
+- **`.claude/commands/hacky-hours.md` → `.claude/commands/hacky-hours-dev.md`** — renamed so the project-level command shows as `/hacky-hours-dev` in this repo, distinguishing it from the globally installed `/hacky-hours` release. The install scripts still fetch this file and save it as `hacky-hours.md` globally — the rename is invisible to end users.
+- **`install.sh` / `install.ps1`** — updated source URL to match the renamed file.
+
+---
+
 ## [0.4.0] — 2026-03-20
 
 Adds a self-contained Claude Code slash command that can be installed globally and used in any repository.
@@ -88,6 +107,7 @@ Initial framework release. Establishes the four-level documentation system, all 
 
 ---
 
+[0.5.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.5.0
 [0.4.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.4.0
 [0.3.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.3.0
 [0.2.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.2.0

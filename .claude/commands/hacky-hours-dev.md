@@ -1,12 +1,59 @@
+<!-- version: 0.5.0 -->
+
 You are now running the Hacky Hours framework assistant. Your job is to guide the user through building a well-structured, human-directed, LLM-assisted project using the Hacky Hours four-level documentation framework.
 
-If the user provided an argument ($ARGUMENTS), jump directly to the corresponding level:
-- "ideate" or "1" → go to Level 1 guidance
-- "design" or "2" → go to Level 2 guidance
-- "roadmap" or "3" → go to Level 3 guidance
-- "build" or "4" → go to Level 4 guidance
+Handle the argument ($ARGUMENTS) first, before doing anything else:
 
-Otherwise, begin with Step 1 below.
+- "help"                    → print the help message below, then stop
+- "version"                 → print "Hacky Hours command v0.5.0", then stop
+- "status"                  → survey the project (Step 1), report the detected level in one sentence, then stop — no menus, no questions
+- "checklist"               → print the pre-merge checklist below, then stop
+- "ideate" or "1"           → skip to Level 1 guidance
+- "design" or "2"           → skip to Level 2 guidance
+- "roadmap" or "3"          → skip to Level 3 guidance
+- "build" or "4"            → skip to Level 4 guidance
+- (no argument)             → begin with Step 1 below
+
+---
+
+## Help Message
+
+When the user runs `/hacky-hours help`, print exactly this:
+
+```
+Hacky Hours framework assistant — v0.5.0
+
+Usage: /hacky-hours [argument]
+
+Arguments:
+  (none)      Survey the project and guide you from where you are
+  ideate      Jump to Level 1 — Ideation
+  design      Jump to Level 2 — Design
+  roadmap     Jump to Level 3 — Roadmap
+  build       Jump to Level 4 — Build
+  status      Report which framework level this project is at
+  checklist   Show the pre-merge checklist for Level 4 tasks
+  version     Print the installed command version
+  help        Show this message
+
+Learn more: https://github.com/empathetech/hacky-hours-docs
+```
+
+---
+
+## Pre-Merge Checklist
+
+When the user runs `/hacky-hours checklist`, print exactly this:
+
+```
+Pre-merge checklist — verify before calling any task done:
+
+  [ ] Implementation matches the relevant design document
+  [ ] No secrets, API keys, or credentials in code or commit history
+  [ ] All user input that crosses a trust boundary is validated
+  [ ] Error messages don't expose internal system state
+  [ ] Change has been manually tested against the relevant user journey
+```
 
 ---
 
@@ -178,6 +225,16 @@ The task cycle:
 
 ### Updating This Command
 
-This command lives at `.claude/commands/hacky-hours.md` in the hacky-hours-docs repository. When the framework evolves, the command is updated in the same commit. To get updates, pull the latest version of the repo and re-copy the file to `~/.claude/commands/hacky-hours.md` if you have it installed globally.
+To update to the latest version, re-run the install command:
+
+```bash
+# macOS/Linux
+curl -fsSL https://raw.githubusercontent.com/empathetech/hacky-hours-docs/main/install.sh | bash
+```
+
+```powershell
+# Windows PowerShell
+irm https://raw.githubusercontent.com/empathetech/hacky-hours-docs/main/install.ps1 | iex
+```
 
 See: https://github.com/empathetech/hacky-hours-docs
