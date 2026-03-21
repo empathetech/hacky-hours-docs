@@ -24,7 +24,7 @@ Examples:
 **Then route:**
 
 - "help"                    → print the help message below, then stop
-- "version"                 → print "Hacky Hours command v1.0.0", then stop
+- "version"                 → print "Hacky Hours command v1.0.1", then stop
 - "status"                  → survey the project at ROOT_PATH (Step 1), report the detected level in one sentence, then stop — no menus, no questions
 - "checklist"               → print the pre-merge checklist below, then stop
 - "ideate" or "1"           → skip to Level 1 guidance
@@ -46,7 +46,7 @@ Examples:
 When the user runs `/hacky-hours help`, print exactly this:
 
 ```
-Hacky Hours framework assistant — v1.0.0
+Hacky Hours framework assistant — v1.0.1
 
 Hacky Hours is a documentation framework for LLM-assisted app development.
 It guides you through four levels — Ideation, Design, Roadmap, and Build —
@@ -363,7 +363,7 @@ The shape of iteration is the same as the initial build cycle — capture → sy
 
 **Step 1: Capture**
 
-Ask the user to brain-dump freely: bugs they've seen, feedback they've received, ideas for improvements. Write everything into `ITERATION.md` (create it at the repo root if it doesn't exist). No filtering yet — just capture.
+Ask the user to brain-dump freely: bugs they've seen, feedback they've received, ideas for improvements. Write everything into `ITERATION.md` under ROOT_PATH (i.e., `hacky-hours/ITERATION.md` by default — create it if it doesn't exist). No filtering yet — just capture.
 
 Prompt with:
 - "What's broken or annoying that you've noticed since the last release?"
@@ -396,7 +396,7 @@ For each flagged design doc, work through the needed changes section by section.
 
 Proceed with the Level 4 build cycle using the updated backlog.
 
-**Done when:** ITERATION.md has been fully triaged, design docs reflect current reality, and the new items are in BACKLOG.md. Move `ITERATION.md` to `archive/` when complete.
+**Done when:** ITERATION.md has been fully triaged, design docs reflect current reality, and the new items are in BACKLOG.md. Move `ITERATION.md` to `ROOT_PATH/archive/` (i.e., `hacky-hours/archive/`) when complete.
 
 ---
 

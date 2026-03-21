@@ -7,6 +7,14 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.1] — 2026-03-20
+
+### Fixed
+
+- **`/hacky-hours iterate`** — `ITERATION.md` was being created at the project root instead of under ROOT_PATH (`hacky-hours/` by default). Archive path was also pointing to `archive/` instead of `ROOT_PATH/archive/`. Both paths now correctly follow ROOT_PATH, consistent with all other framework artifacts.
+
+---
+
 ## [1.0.0] — 2026-03-20
 
 Safety-first design philosophy, licensing as a first-class artifact, and `hacky-hours/` subfolder as the default scaffold location.
