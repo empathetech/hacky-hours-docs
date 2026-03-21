@@ -92,6 +92,19 @@ Work through these levels in order. Each level's `README.md` explains what "done
 
 ---
 
+## Use as a Claude Code Command
+
+Install `/hacky-hours` as a global Claude Code slash command so it works in **any repo you open** — not just this one.
+
+```bash
+mkdir -p ~/.claude/commands
+cp /path/to/hacky-hours-docs/.claude/commands/hacky-hours.md ~/.claude/commands/hacky-hours.md
+```
+
+Then type `/hacky-hours` in any Claude Code session to launch the guided framework workflow. See [`runbooks/install-as-command.md`](./runbooks/install-as-command.md) for full instructions (Windows, updating, uninstalling).
+
+---
+
 ## Using This Repo as a Resource in Another Project
 
 You can import this framework into any project so Claude can reference it as in-session context. See [`runbooks/using-this-repo/import-as-resource.md`](./runbooks/using-this-repo/import-as-resource.md) for three approaches:

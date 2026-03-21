@@ -7,6 +7,21 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.4.0] — 2026-03-20
+
+Adds a self-contained Claude Code slash command that can be installed globally and used in any repository.
+
+### Added
+
+- **`.claude/commands/hacky-hours.md`** — A Claude Code custom slash command (`/hacky-hours`) that works as a project-level command in this repo and as a global command once copied to `~/.claude/commands/`. The command surveys the current project directory, detects which framework level is active (or that no framework files exist), and guides the user through the appropriate next step. Supports `$ARGUMENTS` for jumping directly to a level (`/hacky-hours ideate`, `/hacky-hours design`, `/hacky-hours roadmap`, `/hacky-hours build`). Embeds the full framework guidance so it functions without the hacky-hours-docs repo being present in the target project.
+- **`runbooks/install-as-command.md`** — Instructions for installing the command globally on macOS, Linux, and Windows. Covers verification, updating to new versions, and uninstalling.
+
+### Changed
+
+- **`README.md`** — Added "Use as a Claude Code Command" section with one-liner install instructions and a link to the install runbook.
+
+---
+
 ## [0.3.0] — 2026-03-20
 
 Major content additions: a worked example project, copy-paste Claude session starters, a glossary, FAQ, cost breakdown, and a zero-install setup path via GitHub Codespaces.
@@ -73,6 +88,7 @@ Initial framework release. Establishes the four-level documentation system, all 
 
 ---
 
+[0.4.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.4.0
 [0.3.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.3.0
 [0.2.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.2.0
 [0.1.0]: https://github.com/empathetech/hacky-hours-docs/releases/tag/v0.1.0
