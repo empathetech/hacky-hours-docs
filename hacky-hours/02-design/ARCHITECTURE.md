@@ -65,14 +65,46 @@ User adds this repo as a submodule and references it in their project's `CLAUDE.
 
 ## Known Fragility
 
-The slash command prompt (`.claude/commands/hacky-hours.md`) is the most complex component. It has been built incrementally over releases and contains:
-- Argument routing logic
-- Full guidance for all four levels
-- Scaffold, iterate, sync, audit, adopt, and migrate workflows
-- Safety-first design philosophy embedded throughout
+The slash command prompt (`.claude/commands/hacky-hours-dev.md`) is the most complex component (~980 lines). As of v1.1.0, the command has been harmonized: all workflow sections follow consistent patterns (context preambles, done-when criteria), the scaffold and adopt flows produce matching file structures, and subcommand help documents every argument.
 
-This prompt needs harmonization to ensure consistency, backward compatibility with existing artifacts, and a sustainable, scalable process as new features are added. Changes to the command prompt affect every user on next install — there is no gradual rollout mechanism.
+Remaining fragility:
+- **No gradual rollout** — changes to the command prompt affect every user on next install. There is no canary or staged release mechanism.
+- **Single-file architecture** — all routing, guidance, and workflow logic lives in one markdown file. As features grow, this file gets harder to review and reason about.
+- **Cross-tool portability** — the slash command is Claude Code–specific. Other tools (Cursor, Windsurf) get framework behavior through CLAUDE.md project instructions, not the command itself. The two surfaces need to stay in sync.
+
+## Release Process
+
+The command prompt has two versions:
+
+| File | Purpose |
+|------|---------|
+| `.claude/commands/hacky-hours-dev.md` | Development version, used when working in this repo |
+| `~/.claude/commands/hacky-hours.md` | Installed version, used in any other repo |
+
+**How a release works:**
+
+1. All development happens in `hacky-hours-dev.md` (description includes "(dev)")
+2. When ready to release, bump the version string in three places:
+   - Routing table: `print "Hacky Hours command vX.Y.Z"`
+   - Help message: `Hacky Hours framework assistant — vX.Y.Z`
+   - Subcommand help audit section (if version-specific)
+3. Commit, tag (`vX.Y.Z`), push, publish GitHub Release
+4. The install script (`install.sh` / `install.ps1`) downloads `hacky-hours-dev.md` from `main`, strips "(dev)" from the description, and saves it as `hacky-hours.md`
+
+**What constitutes a version bump:**
+- **Patch (x.y.Z):** Bug fixes, wording improvements, no new arguments
+- **Minor (x.Y.0):** New arguments, new workflow sections, new scaffold files
+- **Major (X.0.0):** Breaking changes to existing artifact format or argument behavior
+
+## Cross-Tool Support
+
+The `/hacky-hours` slash command is a Claude Code convenience. The actual framework runs on two things:
+
+1. **The Markdown artifacts** (`hacky-hours/` folder) — these work in any tool
+2. **The CLAUDE.md project state machine** — any tool that reads project instructions (Cursor, Windsurf, Claude.ai Projects) picks this up automatically
+
+Users in non-Claude-Code environments interact with the framework through natural language ("help me with ideation", "what's in my backlog?") instead of slash commands. The CLAUDE.md instructions guide Claude's behavior the same way.
 
 ## Design Decisions
 
-*No ADRs yet. Future decisions should be recorded in `02-design/decisions/`.*
+*Future decisions should be recorded in `02-design/decisions/`.*

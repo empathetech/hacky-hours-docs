@@ -97,6 +97,7 @@ Work through these levels in order. Each level's `README.md` explains what "done
 | [`runbooks/getting-started/`](./runbooks/getting-started/) | Setup guides for all platforms and skill levels |
 | [`runbooks/document-hygiene.md`](./runbooks/document-hygiene.md) | How to keep docs lean as your project grows (archiving, `.claudeignore`, ADRs) |
 | [`runbooks/github-action-sync.md`](./runbooks/github-action-sync.md) | Auto-sync BACKLOG and CHANGELOG when PRs merge via GitHub Action |
+| [`runbooks/cross-tool-usage.md`](./runbooks/cross-tool-usage.md) | Using the framework in Cursor, Windsurf, Claude.ai Projects, or any LLM tool |
 
 ---
 

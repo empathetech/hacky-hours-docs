@@ -7,6 +7,24 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.2.0] — 2026-03-21
+
+Cross-tool support, CHANGELOG deduplication, and architecture documentation.
+
+### Added
+
+- **Cross-tool usage runbook** (`runbooks/cross-tool-usage.md`) — documents how to use the framework in Cursor, Windsurf, Claude.ai Projects, or any LLM tool that reads project context. The slash command is a Claude Code convenience; the framework works anywhere via CLAUDE.md project instructions.
+- **Release Process section in ARCHITECTURE.md** — documents the dev → installed publish cycle, version bump strategy (patch/minor/major), and the three places version strings need updating.
+- **Cross-Tool Support section in ARCHITECTURE.md** — explains how the framework works without the slash command: artifacts + CLAUDE.md project state machine.
+
+### Changed
+
+- **CHANGELOG deduplication** — `hacky-hours/04-build/CHANGELOG.md` is now a symlink to the root `CHANGELOG.md`, eliminating duplicate changelogs. The adopt flow now detects existing CHANGELOGs and creates symlinks instead of new files.
+- **ARCHITECTURE.md Known Fragility** — updated to reflect v1.1.0 harmonization work; remaining fragility items are now: no gradual rollout, single-file architecture, cross-tool portability.
+- **Adopt flow** — now detects existing `CHANGELOG.md` files and creates a symlink to them instead of creating a duplicate. Includes explicit guidance on computing relative symlink paths.
+
+---
+
 ## [1.1.0] — 2026-03-21
 
 Subcommand help, persistent audit scorecards, and command prompt harmonization.

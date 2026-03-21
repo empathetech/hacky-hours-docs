@@ -872,7 +872,7 @@ Gather as much context as possible from existing files. Look for:
 - `README.md` — product name, description, setup instructions, known issues
 - Package manifests: `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `Gemfile`, `pom.xml` — tech stack, dependencies, version
 - Directory structure — what are the top-level folders? (`src/`, `api/`, `frontend/`, `db/`, `migrations/`, etc.)
-- Existing docs: any `.md` files, `docs/` folder, `CONTRIBUTING.md`, `CHANGELOG.md`
+- Existing docs: any `.md` files, `docs/` folder, `CONTRIBUTING.md`, `CHANGELOG.md` — **if a CHANGELOG.md already exists, note its location; you'll symlink to it instead of creating a new one**
 - Database/schema files: `*.sql`, migration files, ORM model files, `schema.prisma`
 - Auth-related files: any file named `auth`, `login`, `session`, `middleware`
 - Environment variable references: `.env.example`, `config.py`, `settings.py`, any `process.env.*` or `os.environ` usage
@@ -940,7 +940,7 @@ I'll create the following under hacky-hours/:
   02-design/decisions/           — for Architecture Decision Records
   03-roadmap/ROADMAP.md          — empty, ready for prioritization
   04-build/BACKLOG.md            — seeded from TODOs + README + your answers
-  04-build/CHANGELOG.md          — empty, ready for your first entry
+  04-build/CHANGELOG.md          — symlink to existing CHANGELOG if found, otherwise new file
   audits/                        — for persistent audit scorecards
   archive/                       — cold storage for completed work
   .claudeignore (at project root)
@@ -949,6 +949,8 @@ I'll create the following under hacky-hours/:
 These are starting points, not finished documents. Review each one and correct
 anything that's wrong before using them to guide implementation.
 ```
+
+**CHANGELOG handling:** If the project already has a `CHANGELOG.md` (at the project root or elsewhere), create `04-build/CHANGELOG.md` as a **symlink** to the existing file instead of creating a new one. This avoids duplicate changelogs. Compute the relative path from `ROOT_PATH/04-build/` to the existing file (e.g., `../../CHANGELOG.md` for a root-level changelog). Tell the user what you're doing and why.
 
 Ask for confirmation, then write the files.
 
