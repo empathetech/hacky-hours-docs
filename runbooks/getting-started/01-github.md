@@ -27,7 +27,13 @@ The **Free** plan is sufficient for everything in this framework. You can upgrad
 
 ### 4. Enable two-factor authentication (required)
 
-GitHub requires 2FA. Go to **Settings → Password and authentication** and set up either an authenticator app (recommended) or SMS. Save your recovery codes somewhere safe — losing them can lock you out of your account.
+GitHub requires 2FA. Go to **Settings → Password and authentication** and set up either an authenticator app (recommended) or SMS.
+
+An **authenticator app** is a free app on your phone that generates one-time codes. Good options: [Google Authenticator](https://support.google.com/accounts/answer/1066447) or [Authy](https://authy.com). SMS works too but is slightly less secure.
+
+Save your recovery codes somewhere safe — losing them can lock you out of your account.
+
+> **Screenshot:** GitHub Settings → Password and authentication page showing 2FA setup
 
 ### 5. Create your first repository
 
@@ -40,14 +46,20 @@ A repository (repo) is a folder for your project. To create one:
 
 ---
 
+## You're Done When...
+
+You can log into [github.com](https://github.com), see your new repository, and your account has 2FA enabled. That's all you need here — the rest happens from your computer.
+
+---
+
 ## Next Steps
 
-- [Fork or clone hacky-hours-docs](../using-this-repo/fork-vs-clone.md) to get the project template
-- [Install git](./03-git-basics.md) to work with repositories locally
+Go back to the [Getting Started README](./README.md) and continue with your OS setup runbook.
 
 ---
 
 ## Related
 
+- [Getting Started README](./README.md)
 - [02-claude-code.md](./02-claude-code.md)
 - [03-git-basics.md](./03-git-basics.md)

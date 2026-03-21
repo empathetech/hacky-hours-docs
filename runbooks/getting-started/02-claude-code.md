@@ -16,7 +16,7 @@ Claude Code is Anthropic's CLI (command-line interface) for working with Claude 
 
 ### 1. Create an Anthropic account
 
-Go to [claude.ai](https://claude.ai) and sign up. A Claude Pro subscription gives you access to Claude Code.
+Go to [claude.ai](https://claude.ai) and sign up. Claude Code requires a **Claude Pro** subscription (check [claude.ai/pricing](https://claude.ai/pricing) for current pricing — it is a paid plan). If you're just evaluating, the setup steps below work the same; you'll just need to subscribe before Claude Code will let you run sessions.
 
 ### 2. Install Claude Code
 
@@ -38,12 +38,14 @@ On first launch, Claude Code will open a browser window to authenticate with you
 
 ### 4. Start a session in your project
 
-Navigate to your project folder in the terminal:
+Navigate to your project folder in the terminal. Replace the path below with the actual location of your project — for example, if you cloned it to your Documents folder:
 
 ```bash
-cd path/to/your-project
+cd ~/Documents/my-project-docs
 claude
 ```
+
+> **Tip:** Not sure of your folder path? In VS Code, right-click any file in the Explorer panel and choose "Copy Path" to get it.
 
 Claude Code will read any `CLAUDE.md` file in the directory and use it as context. This is the mechanism the Hacky Hours framework uses to keep Claude aligned with your project.
 
@@ -64,6 +66,12 @@ If Claude responds with an accurate list, you're set up correctly.
 - **Keep your CLAUDE.md updated** — Claude reads it at the start of every session. The more context it has, the better aligned it will be.
 - **Use `/help`** in the Claude Code session to see available commands.
 - **Press Ctrl+C** to exit a session.
+
+---
+
+## You're Done When...
+
+You can type `claude` in your terminal inside your project folder and Claude responds to a question. If it asks you to authenticate, follow the browser prompt — that's expected on first run.
 
 ---
 

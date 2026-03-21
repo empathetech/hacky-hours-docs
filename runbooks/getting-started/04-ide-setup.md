@@ -22,12 +22,16 @@ Install these from the VS Code Extensions panel (Ctrl+Shift+X / Cmd+Shift+X):
 
 ### Opening Your Project
 
+In your terminal, navigate to your project folder and type `code .` — the dot means "open this folder":
+
 ```bash
-cd path/to/your-project
+cd ~/Documents/my-project-docs
 code .
 ```
 
-The `.` opens the current folder in VS Code.
+Replace `~/Documents/my-project-docs` with the actual path to your project. VS Code will open the entire folder as a workspace.
+
+> **Screenshot:** VS Code open with a project folder visible in the left Explorer panel
 
 ---
 
@@ -60,6 +64,12 @@ Markdown is plain text with simple formatting syntax. GitHub and Claude Code bot
 |----------|----------|
 | Cell     | Cell     |
 ```
+
+---
+
+## You're Done When...
+
+You can open your project folder in VS Code, see the files listed in the left panel, and click on a `.md` file to view its contents. If you have the Markdown Preview Enhanced extension, press **Cmd+Shift+V** (macOS) or **Ctrl+Shift+V** (Windows/Linux) to see it rendered.
 
 ---
 

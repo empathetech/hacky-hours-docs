@@ -98,8 +98,14 @@ Each task in `BACKLOG.md` gets its own branch, named consistently:
 
 ---
 
+## You're Done When...
+
+You can run `git status` inside your project folder and see a response (even if it says "nothing to commit" — that means it's working). You've also set your name and email with `git config`.
+
+---
+
 ## Related
 
 - [01-github.md](./01-github.md)
-- [build/README.md](../../04-build/README.md)
+- [04-build/README.md](../../04-build/README.md)
 - [fork-vs-clone.md](../using-this-repo/fork-vs-clone.md)

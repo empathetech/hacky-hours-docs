@@ -1,81 +1,106 @@
 # Fork vs Clone
 
-When starting a new project with the Hacky Hours framework, you have two options for getting your own copy of this repo. Choosing the right one depends on your goal.
+When starting a new project with the Hacky Hours framework, you need your own copy of this repo. Here's how to get it.
+
+**Just getting started?** Follow the beginner path below — it's three steps.
 
 ---
 
-## Fork (recommended for new projects)
+## The Beginner Path: Fork on GitHub, then Clone Locally
 
-**What it does:** Creates a copy of `hacky-hours-docs` under your GitHub account. Your copy is independent — you can modify it freely, and you can optionally pull in future updates from the original if you want them.
-
-**Use this when:** You want to use this framework as the starting point for your own project's documentation.
-
-### How to fork
+### Step 1: Fork on GitHub
 
 1. Go to the `hacky-hours-docs` repository on GitHub
 2. Click the **Fork** button in the top right
-3. Choose your account as the destination
-4. Clone your fork locally:
+
+> **Screenshot:** GitHub repository page with Fork button highlighted
+
+3. On the next screen, choose your account as the destination and click **Create fork**
+
+This creates your own personal copy of the repo on GitHub. You can now modify it freely without affecting the original.
+
+### Step 2: Clone it to your computer
+
+Cloning downloads your fork to your computer so you can work on it locally.
+
+On your fork's GitHub page, click the green **Code** button and copy the HTTPS URL. Then in your terminal:
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/hacky-hours-docs.git my-project-docs
+```
+
+Replace `YOUR-USERNAME` with your GitHub username (e.g., `git clone https://github.com/jsmith/hacky-hours-docs.git my-project-docs`).
+
+> **Screenshot:** GitHub Code button dropdown showing the HTTPS URL to copy
+
+### Step 3: Open it
+
+```bash
 cd my-project-docs
+code .
 ```
 
-5. Rename the remote so it's clear this is your project:
+You're done. Your project folder is open in VS Code and connected to your GitHub repo.
+
+---
+
+## Renaming Your Fork (optional but recommended)
+
+After forking, rename the repo in GitHub to match your actual project:
+
+1. Go to your forked repo on GitHub → **Settings**
+2. Change the **Repository name** to something like `my-app-docs`
+3. Update the URL in your local clone to match:
 
 ```bash
-git remote rename origin mine
+git remote set-url origin https://github.com/YOUR-USERNAME/my-app-docs.git
 ```
 
-6. (Optional) Add the original as an upstream remote to pull future updates:
+---
+
+## What's the Difference Between Fork and Clone?
+
+| | Fork | Clone |
+|--|------|-------|
+| Where it happens | On GitHub (in your browser) | On your computer (in the terminal) |
+| What it creates | A copy of the repo on your GitHub account | A local copy on your hard drive |
+| When you need it | Once, to get your own GitHub copy | Once, to download it locally |
+
+You always do both: fork first, then clone your fork.
+
+---
+
+## Advanced: Keeping Your Fork Updated
+
+If the Hacky Hours framework releases improvements you want to pull in, you can connect your fork back to the original:
+
+<details>
+<summary>Show advanced steps</summary>
 
 ```bash
+# Add the original repo as a remote called "upstream"
 git remote add upstream https://github.com/empathetech/hacky-hours-docs.git
-```
 
-To pull in updates from the original later:
-
-```bash
+# Pull in updates from the original
 git fetch upstream
 git merge upstream/main
 ```
 
----
+You only need to do the first command once. Run the second two whenever you want to pull in new framework updates.
 
-## Clone (for contributing or referencing)
-
-**What it does:** Creates a local copy of the repo that stays connected to the original. Changes you push go back to the original (if you have permission).
-
-**Use this when:**
-- You want to contribute improvements back to the Hacky Hours framework itself
-- You want to use this repo as a read-only reference without modifying it
-
-### How to clone
-
-```bash
-git clone https://github.com/empathetech/hacky-hours-docs.git
-cd hacky-hours-docs
-```
+</details>
 
 ---
 
-## Renaming Your Fork
+## You're Done When...
 
-After forking, rename the repo in GitHub to match your project:
-
-1. Go to your forked repo → **Settings**
-2. Change the **Repository name** to something like `my-project-docs`
-3. Update your local remote URL:
-
-```bash
-git remote set-url mine https://github.com/YOUR-USERNAME/my-project-docs.git
-```
+You can open your terminal, `cd` into your project folder, run `git status`, and see "On branch main" with your project files listed. That means your local clone is connected to your GitHub fork and ready to use.
 
 ---
 
 ## Related
 
+- [Getting Started README](../getting-started/README.md)
 - [01-github.md](../getting-started/01-github.md)
 - [03-git-basics.md](../getting-started/03-git-basics.md)
 - [import-as-resource.md](./import-as-resource.md)

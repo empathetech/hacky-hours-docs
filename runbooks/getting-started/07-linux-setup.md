@@ -2,6 +2,8 @@
 
 This runbook installs the minimum tooling needed on Linux to use the Hacky Hours workflow: Node.js, git, VS Code, and Claude Code.
 
+**New to terminals?** Read [`00-what-is-a-terminal.md`](./00-what-is-a-terminal.md) first — it explains what all of this is and why you need it.
+
 Commands below use `apt` (Debian/Ubuntu). For Fedora/RHEL, replace `apt` with `dnf`. For Arch, use `pacman`.
 
 ---
@@ -94,8 +96,23 @@ Then retry the npm install without sudo.
 
 ---
 
+## You're Done When...
+
+Run these three commands and confirm each prints a version number:
+
+```bash
+node --version
+git --version
+code --version
+```
+
+If all three respond with a version, your Linux setup is complete. Move on to [`02-claude-code.md`](./02-claude-code.md).
+
+---
+
 ## Related
 
+- [00-what-is-a-terminal.md](./00-what-is-a-terminal.md)
 - [01-github.md](./01-github.md)
 - [02-claude-code.md](./02-claude-code.md)
 - [03-git-basics.md](./03-git-basics.md)
