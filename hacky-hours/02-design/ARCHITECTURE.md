@@ -76,13 +76,13 @@ flowchart TD
     iterate --> build
     iterate --> pivot["Pivot\n(re-ideate with context)"]
     pivot --> design
-    optimize["Optimize\n(evaluate doc efficiency)"] -.-> |"runs anytime"| iterate
+    optimize["Optimize\n(design vs. reality review)"] -.-> |"runs anytime"| iterate
     optimize -.-> |"runs standalone"| optimize
 ```
 
 - **iterate** — product direction is sound; amend docs, triage feedback, build next
 - **pivot** — product direction needs rethinking; re-ideate with full context, cascade changes through Levels 2-4
-- **optimize** — evaluate whether the documentation structure is still earning its context cost; standalone or as an iterate phase
+- **optimize** — substantive review comparing design intent against current reality; proposes specific fixes; standalone or as an iterate phase
 
 ## GitHub Issues Integration
 
@@ -96,7 +96,7 @@ Two-way sync between BACKLOG.md and GitHub Issues (see [ADR: Two-Way Sync](decis
 
 ## Known Fragility
 
-The slash command prompt (`.claude/commands/hacky-hours-dev.md`) is the most complex component (~1630 lines, ~8.5K estimated tokens). As of v1.1.0, the command has been harmonized: all workflow sections follow consistent patterns (context preambles, done-when criteria), the scaffold and adopt flows produce matching file structures, and subcommand help documents every argument.
+The slash command prompt (`.claude/commands/hacky-hours-dev.md`) is the most complex component (~1600 lines, ~8.6K estimated tokens). As of v1.1.0, the command has been harmonized: all workflow sections follow consistent patterns (context preambles, done-when criteria), the scaffold and adopt flows produce matching file structures, and subcommand help documents every argument.
 
 Remaining fragility:
 - **No gradual rollout** — changes to the command prompt affect every user on next install. There is no canary or staged release mechanism.

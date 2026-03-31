@@ -49,7 +49,7 @@ Read all Level 2 documents and help the user categorize features into MVP, V1, a
 **Done when:** Every planned feature has been assigned to a release tier, with clear rationale for why it belongs there.
 
 ### Level 4 — Build (`hacky-hours/04-build/`)
-Translate roadmap items into discrete tasks in `BACKLOG.md`, each tied to a branch name and semantic version. Before any task is marked complete, verify it meets the criteria established in `design/SECURITY_PRIVACY.md` and other relevant design documents. Update `CHANGELOG.md` on milestone completion.
+Translate roadmap items into discrete tasks in `BACKLOG.md`, each tied to a branch name and semantic version. Before any task is marked complete, verify it meets the criteria established in `hacky-hours/02-design/SECURITY_PRIVACY.md` and other relevant design documents. Update `CHANGELOG.md` on milestone completion.
 
 **Done when:** The current milestone's tasks are complete, tested against design constraints, and released as a tagged version.
 
@@ -71,7 +71,7 @@ This project uses the Hacky Hours documentation framework. Framework artifacts l
 `hacky-hours/` (default scaffold location) or wherever you placed them.
 
 Before starting work, read the relevant level documents:
-- For new features: read `hacky-hours/04-build/README.md` and `hacky-hours/04-build/BACKLOG.md`
+- For new features: read `hacky-hours/04-build/BACKLOG.md`
 - For design decisions: read the relevant file in `hacky-hours/02-design/`
 - For security/privacy concerns: always read `hacky-hours/02-design/SECURITY_PRIVACY.md` before implementation
 - For licensing questions: read `hacky-hours/02-design/LICENSING.md` before adding any dependency

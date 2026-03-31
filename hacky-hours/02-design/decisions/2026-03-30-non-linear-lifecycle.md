@@ -24,7 +24,7 @@ Add two new commands that create backward arcs in the lifecycle:
 
 **`/hacky-hours pivot`** — Re-ideation with full context. Reads all existing artifacts, takes the user back through Level 1 questions with awareness of current state, and cascades changes through Levels 2-4. Produces diffs, not fresh documents. Doc structural refactoring (merge, split, retire) is a natural output. ADRs capture significant direction changes.
 
-**`/hacky-hours optimize`** — Standalone command + lighter phase within iterate. Scans framework docs for token cost, staleness, density, and cross-reference usage. Reports and suggests: archive, consolidate, trim. The iterate integration adds a single-pass flag during Step 2.
+**`/hacky-hours optimize`** — Standalone command + lighter phase within iterate. Reads all planning docs and the codebase (or command prompt for docs-only projects), compares design intent against current reality, and proposes specific actionable changes. The iterate integration adds a single-pass flag during Step 2. *(Note: originally designed as a metrics-only tool; redesigned in v1.5.1 to do substantive review.)*
 
 The lifecycle becomes:
 
