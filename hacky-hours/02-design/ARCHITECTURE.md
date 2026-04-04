@@ -84,6 +84,21 @@ flowchart TD
 - **pivot** — product direction needs rethinking; re-ideate with full context, cascade changes through Levels 2-4
 - **optimize** — substantive review comparing design intent against current reality; proposes specific fixes; standalone or as an iterate phase
 
+## Voice Mode
+
+As of v1.7.0, the command supports a persistent voice mode that controls conversation style across sessions.
+
+- **Default:** non-technical — tradeoffs explained through outcomes, analogies, and consequences; no jargon without plain-language definition
+- **Engineer:** opt-in — spec-aware, ecosystem-aware, tradeoff-precise; assumes familiarity with technical vocabulary
+
+**How it works:**
+
+The `/hacky-hours mode` command toggles between voices and writes the current mode to a `## Hacky Hours Voice` section in the project's `CLAUDE.md`. On session start, the command reads this section and applies the mode. If no section is present, non-technical is assumed.
+
+Scaffolding writes `## Hacky Hours Voice: non-technical` to `CLAUDE.md` by default.
+
+Voice mode affects conversation style only — it does not change which documents get created, which questions get asked, or how rigorously design decisions are evaluated.
+
 ## GitHub Issues Integration
 
 Two-way sync between BACKLOG.md and GitHub Issues (see [ADR: Two-Way Sync](decisions/2026-03-30-issues-two-way-sync.md)):

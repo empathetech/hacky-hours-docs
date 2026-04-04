@@ -7,6 +7,25 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.7.0] — 2026-04-04
+
+Voice mode — non-technical plain language is now the default conversation style, with an opt-in engineer mode for technical users.
+
+### Added
+
+- **`/hacky-hours mode`** — new command to toggle conversation voice between `default` (plain language) and `engineer` (technical). Persists to `CLAUDE.md` across sessions. Toggles without an argument; accepts `mode engineer` or `mode default` explicitly.
+- **`help mode`** — subcommand help entry documenting mode usage, both voices, and persistence behavior
+- **Voice mode in scaffold** — new projects get a `## Hacky Hours Voice` section in their generated `CLAUDE.md`, defaulting to plain language, with a one-line note on how to switch
+
+### Changed
+
+- **Default conversation style is now non-technical** — tradeoffs explained through outcomes, analogies, and consequences; no jargon without plain-language definition. Engineers opt in to technical mode rather than non-technical users having to ask for simpler explanations.
+- **`ARCHITECTURE.md`** — Voice Mode section added documenting mode as a persistent config concept
+- **`ACCESSIBILITY.md`** — non-technical default documented as an explicit accessibility decision with rationale
+- **Version bumped** to v1.7.0 in routing table, help message, and command description
+
+---
+
 ## [1.6.0] — 2026-03-30
 
 Readability and accessibility pass — making every document approachable for non-technical users.

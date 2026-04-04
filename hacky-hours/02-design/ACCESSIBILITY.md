@@ -37,6 +37,13 @@ Last full audit: 2026-03-21 (v1.3.0). Incremental review: 2026-03-30 (v1.5.0).
 - **`/hacky-hours pivot`** — uses metaphor ("pivot") that may not be obvious to non-business audiences. Help text explains it as "rethink product direction." Term should be in GLOSSARY.md.
 - **`/hacky-hours sync --issues`** — introduces concepts (labels, issue linking, `#<number>` annotations) that assume GitHub familiarity. The command explains each step, but a GLOSSARY entry for "GitHub Issue" and "label" would help.
 
+### v1.7.0 Voice Mode — Accessibility Rationale
+
+The default voice mode is **non-technical** by design. This is an accessibility decision: non-technical users often don't know what signals to send to indicate their background, so they can't self-identify as needing plain-language explanations. Defaulting to accessible language ensures these users are never left behind. Engineers can opt in to technical mode explicitly via `/hacky-hours mode engineer`.
+
+New terms from this feature to add to GLOSSARY.md:
+- "voice mode" — the current conversation style setting for the framework assistant
+
 ### Remaining Gaps (not blocking)
 
 - No guidance for screen reader users navigating the framework's own docs

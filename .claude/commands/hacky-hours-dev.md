@@ -25,7 +25,7 @@ Examples:
 
 - "help"                    → print the help message below, then stop
 - "help <command>"          → print help for that specific command (see Subcommand Help below), then stop
-- "version"                 → print "Hacky Hours command v1.6.0", then stop
+- "version"                 → print "Hacky Hours command v1.7.0", then stop
 - "status"                  → survey the project at ROOT_PATH (Step 1), report the detected level in one sentence, then stop — no menus, no questions
 - "checklist"               → print the pre-merge checklist below, then stop
 - "ideate" or "1"           → skip to Level 1 guidance
@@ -40,6 +40,7 @@ Examples:
 - "optimize"                → skip to Optimize guidance below
 - "pivot"                   → skip to Pivot guidance below
 - "link" (with optional `--sync` flag) → skip to Link guidance below
+- "mode" (with optional `engineer` or `default` argument) → skip to Mode guidance below
 - "dry-run"                 → begin with Step 1 below, but in dry-run mode: never create or modify any files; wherever you would write a file, display its contents in a code block with a note "↳ would write to <path>" instead
 - (no argument)             → run the guided session: execute Steps 1, 2, and 3 below
 
@@ -50,7 +51,7 @@ Examples:
 When the user runs `/hacky-hours help`, print exactly this:
 
 ```
-Hacky Hours framework assistant — v1.6.0
+Hacky Hours framework assistant — v1.7.0
 
 Hacky Hours is a documentation framework for LLM-assisted app development.
 It guides you through four levels — Ideation, Design, Roadmap, and Build —
@@ -82,6 +83,7 @@ Usage: /hacky-hours [argument]
 
 --- Utilities ---
   migrate     Move existing root-level artifacts into hacky-hours/ subfolder (v0.x → v1.0)
+  mode        Toggle conversation voice — default (plain language) or engineer (technical)
   status      Report which framework level this project is at (one sentence, no prompts)
   checklist   Show the pre-merge checklist for Level 4 tasks
   version     Print the installed command version
@@ -339,6 +341,31 @@ When the user runs `/hacky-hours help <command>`, print the relevant entry below
 
   Done when: PRODUCT_OVERVIEW.md reflects the new direction and changes have
   cascaded through design docs, roadmap, and backlog.
+
+---
+
+/hacky-hours help mode
+
+  Switch the conversation voice between plain language and technical mode.
+
+  What it does:
+    - Reads the current voice setting from CLAUDE.md (## Hacky Hours Voice section)
+    - Toggles to the other mode and writes the change back to CLAUDE.md
+    - Confirms the new mode and what it changes
+
+  Modes:
+    default    Plain language — tradeoffs explained through outcomes and analogies,
+               no jargon without definition. This is the default for all new projects.
+    engineer   Technical mode — spec-aware, ecosystem-aware, tradeoff-precise.
+               Assumes familiarity with programming concepts and tooling vocabulary.
+
+  Usage:
+    /hacky-hours mode              Toggle to the other mode
+    /hacky-hours mode engineer     Switch to engineer mode explicitly
+    /hacky-hours mode default      Switch to plain language mode explicitly
+
+  Neither mode skips explaining consequences — they just frame them differently.
+  Persists across sessions (written to CLAUDE.md).
 ```
 
 ---
@@ -480,6 +507,18 @@ When `hacky-hours/04-build/BACKLOG.md` is empty:
 Design constraints live in `hacky-hours/02-design/`. Before implementing anything, check whether a relevant design doc exists. If a design doc doesn't address something you need to implement, surface it to the user first — don't assume.
 
 Before adding any dependency or external service, check `hacky-hours/02-design/LICENSING.md` for compatibility with the project's chosen license.
+
+## Hacky Hours Voice
+
+**Current mode:** default
+
+When responding, use plain language. Explain technical tradeoffs through outcomes,
+real-world analogies, and consequences — not specs or ecosystem comparisons.
+Never use jargon without defining it first. If comparing two tools (e.g. React vs Vue),
+explain what each choice means for the user's project (speed, community help, learning
+curve, cost) rather than listing technical differences.
+
+To switch to engineer mode: /hacky-hours mode engineer
 ```
 
 Note: if ROOT_PATH is not `hacky-hours/`, substitute the correct path in all references above (e.g., `meta/04-build/BACKLOG.md` if `--root meta/` was used during scaffold).
@@ -1577,6 +1616,75 @@ Changes in [other repo] since this link was established:
 ```
 
 Do **not** auto-update RELATED_REPOS.md. Show the findings and let the user decide what to update. If they want to update the routing table, offer to do it section by section.
+
+---
+
+### Mode — Switch Conversation Voice
+
+**Purpose:** Toggle the conversation style between plain language (default) and engineer mode. Both modes explain consequences — the difference is framing and vocabulary.
+
+---
+
+**Reading mode at session start:**
+
+At the start of every guided session (no-argument run, or any level command), read the project's `CLAUDE.md` for a `## Hacky Hours Voice` section. Apply the mode before saying anything else. Report it in one line:
+
+> "Voice: plain language (default)" or "Voice: engineer mode — use `/hacky-hours mode default` to switch back."
+
+If no `## Hacky Hours Voice` section is found in `CLAUDE.md`, assume non-technical (plain language) and proceed without mentioning it.
+
+---
+
+**Handling the `mode` command:**
+
+1. Read `CLAUDE.md` to find the current `## Hacky Hours Voice` setting (or assume `default` if absent).
+2. Determine the target mode:
+   - `mode` (no argument) → toggle: if current is `default`, switch to `engineer`; if `engineer`, switch to `default`
+   - `mode engineer` → set to `engineer`
+   - `mode default` → set to `default`
+3. If the target mode is already active, tell the user and stop: "Already in [mode] mode."
+4. Write the new mode to `CLAUDE.md` — find the `## Hacky Hours Voice` section and update it. If the section doesn't exist, append it to the end of `CLAUDE.md`.
+5. Confirm to the user: "Switched to [mode] mode. [one-line description of what changes]"
+
+The `## Hacky Hours Voice` section in `CLAUDE.md` should look like:
+
+```markdown
+## Hacky Hours Voice
+
+**Current mode:** default
+
+When responding, use plain language. Explain technical tradeoffs through outcomes,
+real-world analogies, and consequences — not specs or ecosystem comparisons.
+Never use jargon without defining it first. If comparing two tools (e.g. React vs Vue),
+explain what each choice *means for the user's project* (speed, community help, learning
+curve, cost) rather than listing technical differences.
+```
+
+or:
+
+```markdown
+## Hacky Hours Voice
+
+**Current mode:** engineer
+
+When responding, assume familiarity with programming concepts, frameworks, and tooling.
+Use precise technical vocabulary. Tradeoffs can reference ecosystem maturity, type safety,
+performance characteristics, dependency footprint, and architectural patterns without
+requiring plain-language definitions for each term.
+```
+
+---
+
+**What each mode changes:**
+
+| Situation | Plain language (default) | Engineer |
+|-----------|--------------------------|----------|
+| Comparing React vs Vue | "React has a larger community — easier to find help and pre-built components. Vue is simpler to learn if you're newer to this." | "React has a larger ecosystem and better TypeScript tooling; Vue's reactivity model is simpler and its SFC format reduces context-switching." |
+| Recommending a database | "Supabase manages everything for you — no server to maintain, free to start." | "Supabase is a managed Postgres host with a built-in REST/realtime API layer; good fit for projects that want SQL semantics without ops overhead." |
+| Explaining a tradeoff | "If you pick this option, you'll need to pay once you have more than X users." | "This option has a free tier capped at X MAU; beyond that, pricing is usage-based." |
+| Security warning | "Don't put your passwords or secret keys in your code — if someone finds that file, they could access your account." | "Avoid committing credentials to source control; use environment variables and add `.env` to `.gitignore`." |
+
+Plain language is not less rigorous — it's the same information grounded in what the user actually needs to decide.
 
 ---
 
