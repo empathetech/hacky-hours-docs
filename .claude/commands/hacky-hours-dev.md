@@ -33,7 +33,7 @@ Examples:
 - "step 3" | "step roadmap" | "roadmap"     → skip to Step 3 guidance
 - "step 4" | "step build" | "build"         → skip to Step 4 guidance
 - "step 5" | "step iterate" | "iterate"     → skip to Step 5 guidance
-- "review"                              → list review modes, then run review 1 (audit) by default
+- "review"                              → list review modes, then stop
 - "review 1" | "review audit"           → skip to Review 1 guidance (audit)
 - "review 2" | "review optimize"        → skip to Review 2 guidance (optimize)
 - "review 3" | "review pivot"           → skip to Review 3 guidance (pivot)
@@ -91,7 +91,7 @@ Usage: /hacky-hours [command]
   step 5 | step iterate     Step 5 — Post-release iteration
 
 --- Review your project ---
-  review                    List review modes (runs audit by default)
+  review                    List review modes
   review 1 | review audit   Did we follow best practices?
   review 2 | review optimize  Did we build it well?
   review 3 | review pivot   Should we build something else?
