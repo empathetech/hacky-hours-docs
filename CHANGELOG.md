@@ -7,6 +7,67 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [2.0.0] — 2026-04-11
+
+**MAJOR VERSION — breaking changes to all command entry points.** See [ADR: v2.0.0 Command Surface Redesign](hacky-hours/02-design/decisions/2026-04-11-v2-command-surface-redesign.md) for the full rationale and migration table.
+
+Users upgrading from v1.x: run `/hacky-hours tools upgrade` after installing to update CLAUDE.md references. All v1.x commands still exist as guidance sections — only the entry point syntax changed.
+
+### Breaking Changes
+
+- **Command surface fully reorganized** into five parent groups: `step`, `review`, `learn`, `update`, `tools`
+- **`/hacky-hours ideate|design|roadmap|build`** → `/hacky-hours step 1|2|3|4` (named aliases still work: `step ideate`, `step build`, etc.)
+- **`/hacky-hours iterate`** → `/hacky-hours step 5` (or `step iterate`) — iteration is now a first-class step
+- **`/hacky-hours dry-run`** → `/hacky-hours step 0` — dry-run is step zero
+- **`/hacky-hours audit`** → `/hacky-hours review 1` (or `review audit`)
+- **`/hacky-hours optimize`** → `/hacky-hours review 2` (or `review optimize`)
+- **`/hacky-hours pivot`** → `/hacky-hours review 3` (or `review pivot`)
+- **`/hacky-hours learn [tour|onboard|quiz]`** → `/hacky-hours learn [1|2|3]` (named aliases still work)
+- **`/hacky-hours sync`** → `/hacky-hours update 1` (or `update version`)
+- **`/hacky-hours sync --issues`** → `/hacky-hours update 2` (or `update project`)
+- **`/hacky-hours upgrade|migrate|adopt`** → `/hacky-hours tools upgrade` (detects context)
+- **`/hacky-hours mode`** → `/hacky-hours tools mode`
+- **`/hacky-hours mode default`** → `/hacky-hours tools mode 1` (or `tools mode builder`)
+- **`/hacky-hours mode engineer`** → `/hacky-hours tools mode 2`
+- **`/hacky-hours status`** → bare `/hacky-hours` (surveys and reports)
+- **`/hacky-hours version`** → listed in `/hacky-hours help` header
+- **`/hacky-hours checklist`** → documented in `/hacky-hours help step 4`
+- **`/hacky-hours link` and `link --sync`** → **removed** (use monorepo + `--root` instead)
+- **"Level" language replaced with "Step"** throughout the command prompt, CLAUDE.md, and all scaffold templates
+
+### Added
+
+- **Global Values section** in the command prompt — the framework's first-class values (human as driver, free before paid, privacy-first, accessible by default, licensing hygiene) declared once at the top and governing all commands
+- **`/hacky-hours tools walkthrough`** — new command: narrative overview of how all commands work together, designed for framework adopters
+- **`step 0`** — dry-run mode, lives naturally before step 1
+- **`step 5`** — iteration promoted as a first-class step in the cycle
+- **Numbered aliases** throughout: `step 1–5`, `review 1–3`, `learn 1–3`, `update 1–2`, `tools mode 1–2`
+- **`tools mode builder`** — "builder" replaces "default" as the plain language mode name
+
+### Changed
+
+- **Command prompt reduced** from ~2,100 lines to ~1,470 lines (~30% reduction) through structural consolidation and removal of link/migrate/adopt sections
+- **`tools upgrade`** absorbs `migrate` (layout migration) and `adopt` (new codebase onboarding) — detects context and runs the appropriate flow
+- **`review`** with no argument runs `review 1` (audit) by default, then offers to run review 2 and 3
+- **Version string** bumped to v2.0.0 in routing table, help message, and command description
+
+### Removed
+
+- **`/hacky-hours link`** and **`link --sync`** — multi-repo coordination removed; guidance updated to recommend monorepo + `--root`
+- **`/hacky-hours migrate`** standalone — absorbed into `tools upgrade`
+- **`/hacky-hours adopt`** standalone — absorbed into `tools upgrade`
+- **`/hacky-hours status`** standalone — behavior incorporated into bare command
+- **`/hacky-hours version`** standalone — version shown in help message header
+- **`/hacky-hours checklist`** standalone — content in `help step 4`
+
+### Design doc updates
+
+- **`ARCHITECTURE.md`** — lifecycle diagram updated to five-step cycle, command surface section updated, Known Fragility updated
+- **`CLAUDE.md`** — "Level" → "Step" throughout, command references updated (`review 1`/`update 1` instead of `audit`/`sync`)
+- **ADR: v2.0.0 Command Surface Redesign** — documents all thirteen decisions with rationale, tradeoffs, and breaking changes migration table
+
+---
+
 ## [1.8.0] — 2026-04-11
 
 Learn suite, upgrade command, testing design doc, and expanded audit scorecard.

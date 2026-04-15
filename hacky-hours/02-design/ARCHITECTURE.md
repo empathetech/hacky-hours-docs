@@ -1,6 +1,6 @@
 # ARCHITECTURE.md
 
-**Level 2 — Design** | hacky-hours-docs
+**Step 2 — Design** | hacky-hours-docs
 
 ---
 
@@ -65,24 +65,24 @@ User adds this repo as a submodule and references it in their project's `CLAUDE.
 
 ## Lifecycle Model
 
-The framework's lifecycle is non-linear (as of v1.5.0, see [ADR: Non-Linear Lifecycle](decisions/2026-03-30-non-linear-lifecycle.md)):
+The framework's lifecycle is a five-step cycle (non-linear as of v1.5.0, see [ADR: Non-Linear Lifecycle](decisions/2026-03-30-non-linear-lifecycle.md); step language introduced in v2.0.0, see [ADR: v2.0.0 Command Surface Redesign](decisions/2026-04-11-v2-command-surface-redesign.md)):
 
 ```mermaid
 flowchart TD
-    ideate["Level 1\nIdeate"] --> design["Level 2\nDesign"]
-    design --> roadmap["Level 3\nRoadmap"]
-    roadmap --> build["Level 4\nBuild"]
-    build --> iterate["Iterate\n(amend & refine)"]
+    ideate["Step 1\nIdeate"] --> design["Step 2\nDesign"]
+    design --> roadmap["Step 3\nRoadmap"]
+    roadmap --> build["Step 4\nBuild"]
+    build --> iterate["Step 5\nIterate\n(amend & refine)"]
     iterate --> build
-    iterate --> pivot["Pivot\n(re-ideate with context)"]
+    iterate --> pivot["Review 3\nPivot\n(re-ideate with context)"]
     pivot --> design
-    optimize["Optimize\n(design vs. reality review)"] -.-> |"runs anytime"| iterate
+    optimize["Review 2\nOptimize\n(design vs. reality)"] -.-> |"runs anytime"| iterate
     optimize -.-> |"runs standalone"| optimize
 ```
 
-- **iterate** — product direction is sound; amend docs, triage feedback, build next
-- **pivot** — product direction needs rethinking; re-ideate with full context, cascade changes through Levels 2-4
-- **optimize** — substantive review comparing design intent against current reality; proposes specific fixes; standalone or as an iterate phase
+- **Step 5 (iterate)** — product direction is sound; amend docs, triage feedback, build next
+- **review 3 (pivot)** — product direction needs rethinking; re-ideate with full context, cascade changes through Steps 2–4
+- **review 2 (optimize)** — substantive review comparing design intent against current reality; proposes specific fixes; standalone or as an iterate phase
 
 ## Learn Suite (v1.8.0)
 
@@ -175,11 +175,12 @@ Two-way sync between BACKLOG.md and GitHub Issues (see [ADR: Two-Way Sync](decis
 
 ## Known Fragility
 
-The slash command prompt (`.claude/commands/hacky-hours-dev.md`) is the most complex component. As of v1.1.0, the command has been harmonized: all workflow sections follow consistent patterns (context preambles, done-when criteria), the scaffold and adopt flows produce matching file structures, and subcommand help documents every argument. The prompt continues to grow with each milestone — prompt size should be re-measured after each release.
+The slash command prompt (`.claude/commands/hacky-hours-dev.md`) is the most complex component. As of v2.0.0, the prompt has been restructured: five parent command groups replace a flat list of 19 commands, "Level" language replaced with "Step" throughout, and the prompt reduced from ~2,100 to ~1,470 lines. Prompt size should be re-measured after each release.
 
 Remaining fragility:
 - **No gradual rollout** — changes to the command prompt affect every user on next install. There is no canary or staged release mechanism.
-- **Single-file architecture** — all routing, guidance, and workflow logic lives in one markdown file. As features grow (v1.8.0 adds four new command sections), this file gets harder to review and reason about. The v2.0.0 command audit milestone should evaluate whether splitting is warranted.
+- **Single-file architecture** — all routing, guidance, and workflow logic lives in one markdown file. The v2.0.0 restructure reduced size and improved organization, but the file will grow with future features. Monitor whether a split into per-command files becomes warranted.
+- **Breaking changes on major versions** — v2.0.0 broke all v1.x command entry points. Users must relearn paths after updating. The `tools upgrade` command mitigates this for CLAUDE.md references, but there is no automated migration for user muscle memory.
 - **Cross-tool portability** — the slash command is Claude Code–specific. Other tools (Cursor, Windsurf) get framework behavior through CLAUDE.md project instructions, not the command itself. The two surfaces need to stay in sync.
 - **Node.js dependency (v1.8.0)** — static site generation requires Node.js. The conversation-first design means the framework degrades gracefully without it, but this is the first external runtime dependency the framework has introduced. Worth monitoring whether it creates friction.
 
@@ -195,10 +196,9 @@ The command prompt has two versions:
 **How a release works:**
 
 1. All development happens in `hacky-hours-dev.md` (description includes "(dev)")
-2. When ready to release, bump the version string in three places:
-   - Routing table: `print "Hacky Hours command vX.Y.Z"`
+2. When ready to release, bump the version string in two places:
+   - Routing table comment or description
    - Help message: `Hacky Hours framework assistant — vX.Y.Z`
-   - Subcommand help audit section (if version-specific)
 3. Commit, tag (`vX.Y.Z`), push, publish GitHub Release
 4. The install script (`install.sh` / `install.ps1`) downloads `hacky-hours-dev.md` from `main`, strips "(dev)" from the description, and saves it as `hacky-hours.md`
 

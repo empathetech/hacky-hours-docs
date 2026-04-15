@@ -27,31 +27,36 @@ This framework is built for everyone — including people who don't yet understa
 
 Users can always choose a more complex or paid option — and sometimes they should. But they should make that choice with clear awareness of the tradeoffs, not because it was the default recommendation.
 
-## Four-Level System
+## Five-Step System
 
-This repo organizes work into four levels. Always orient the user to which level they're at and what the next step is.
+This repo organizes work into five steps. Always orient the user to which step they're at and what comes next.
 
-### Level 1 — Ideation (`hacky-hours/01-ideate/`)
+### Step 1 — Ideation (`hacky-hours/01-ideate/`)
 Help the user brain-dump freely into `IDEATION.md`. Ask open-ended questions to draw out their vision. When there's enough to work with, help synthesize it into `PRODUCT_OVERVIEW.md` using the 5Ws: who (target audience), what (product form and function), where (platform), when (timeline), why (value and motivation).
 
 **Done when:** `PRODUCT_OVERVIEW.md` clearly answers all five W questions at a level that a new team member could understand the product's purpose.
 
-### Level 2 — Design (`hacky-hours/02-design/`)
+### Step 2 — Design (`hacky-hours/02-design/`)
 Start by reading `PRODUCT_OVERVIEW.md` and helping the user decide which design documents their specific project needs — not all projects need all documents. Ask questions like: "Does your product store user data?" before assuming a `DATA_MODEL.md` is needed.
 
 For each document created, generate Mermaid diagrams where applicable (ERDs for data models, flowcharts for user journeys, architecture diagrams for system design).
 
 **Done when:** The design documents collectively answer how the product works at a level sufficient to hand off to an engineer.
 
-### Level 3 — Roadmap (`hacky-hours/03-roadmap/`)
-Read all Level 2 documents and help the user categorize features into MVP, V1, and V2. Push back on scope creep. An MVP should be the minimum that proves the core value proposition, nothing more.
+### Step 3 — Roadmap (`hacky-hours/03-roadmap/`)
+Read all Step 2 documents and help the user categorize features into MVP, V1, and V2. Push back on scope creep. An MVP should be the minimum that proves the core value proposition, nothing more.
 
 **Done when:** Every planned feature has been assigned to a release tier, with clear rationale for why it belongs there.
 
-### Level 4 — Build (`hacky-hours/04-build/`)
+### Step 4 — Build (`hacky-hours/04-build/`)
 Translate roadmap items into discrete tasks in `BACKLOG.md`, each tied to a branch name and semantic version. Before any task is marked complete, verify it meets the criteria established in `hacky-hours/02-design/SECURITY_PRIVACY.md` and other relevant design documents. Update `CHANGELOG.md` on milestone completion.
 
 **Done when:** The current milestone's tasks are complete, tested against design constraints, and released as a tagged version.
+
+### Step 5 — Iterate (`hacky-hours/`)
+Capture bugs, feedback, and ideas after a release. Triage into BACKLOG.md. Amend design docs. Write ADRs for significant decisions. Then loop back to Step 4.
+
+**Done when:** ITERATION.md is triaged, design docs reflect current reality, and new items are in BACKLOG.md.
 
 ## Document Conventions
 
@@ -70,7 +75,7 @@ To reference this framework from a different project's Claude Code session, add 
 This project uses the Hacky Hours documentation framework. Framework artifacts live at:
 `hacky-hours/` (default scaffold location) or wherever you placed them.
 
-Before starting work, read the relevant level documents:
+Before starting work, read the relevant step documents:
 - For new features: read `hacky-hours/04-build/BACKLOG.md`
 - For design decisions: read the relevant file in `hacky-hours/02-design/`
 - For security/privacy concerns: always read `hacky-hours/02-design/SECURITY_PRIVACY.md` before implementation
@@ -92,8 +97,8 @@ When completing a task:
 
 When `hacky-hours/04-build/BACKLOG.md` is empty:
 - Tell the user the milestone is complete
-- Suggest running `/hacky-hours audit` first to check for any issues before publishing
-- Then `/hacky-hours sync` to publish the GitHub Release
+- Suggest running `/hacky-hours review 1` first to check for any issues before publishing
+- Then `/hacky-hours update 1` to publish the GitHub Release
 - Do not start new work without direction
 
 Design constraints live in `hacky-hours/02-design/`. Before implementing anything, check whether a relevant design doc exists. In particular:
