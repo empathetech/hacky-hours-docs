@@ -48,18 +48,25 @@ Claude should print the help message listing all available arguments.
 
 | Command | What it does |
 |---------|-------------|
-| `/hacky-hours` | Show this help message |
-| `/hacky-hours ideate` | Jump to Level 1 — Ideation |
-| `/hacky-hours design` | Jump to Level 2 — Design |
-| `/hacky-hours roadmap` | Jump to Level 3 — Roadmap |
-| `/hacky-hours build` | Jump to Level 4 — Build |
-| `/hacky-hours iterate` | Start an iteration cycle after a release |
-| `/hacky-hours sync` | Push backlog to GitHub Issues, publish a release |
-| `/hacky-hours dry-run` | Run the full workflow without writing any files |
-| `/hacky-hours status` | Report which framework level this project is at |
-| `/hacky-hours checklist` | Show the pre-merge checklist |
-| `/hacky-hours version` | Print the installed version |
-| `/hacky-hours help` | Same as running with no argument |
+| `/hacky-hours` | Survey your project and report where you are |
+| `/hacky-hours step 1` | Step 1 — Ideation |
+| `/hacky-hours step 2` | Step 2 — Design |
+| `/hacky-hours step 3` | Step 3 — Roadmap |
+| `/hacky-hours step 4` | Step 4 — Build |
+| `/hacky-hours step 5` | Step 5 — Iterate (post-release cycle) |
+| `/hacky-hours review 1` | Did we follow best practices? |
+| `/hacky-hours review 2` | Did we build it well? |
+| `/hacky-hours review 3` | Should we build something else? |
+| `/hacky-hours learn 1` | Tour — big-picture walkthrough |
+| `/hacky-hours learn 2` | Onboard — hands-on starter task |
+| `/hacky-hours learn 3` | Quiz — test your knowledge |
+| `/hacky-hours update 1` | Publish a new release |
+| `/hacky-hours update 2` | Sync BACKLOG ↔ GitHub Issues |
+| `/hacky-hours tools upgrade` | Update framework artifacts (also: adopt or migrate) |
+| `/hacky-hours tools mode` | Toggle between plain-language and technical mode |
+| `/hacky-hours tools walkthrough` | Narrative overview of how all commands work together |
+| `/hacky-hours step 0` | Explore without writing any files (safe to try) |
+| `/hacky-hours help` | Full help message |
 
 ---
 
@@ -92,4 +99,4 @@ Remove-Item "$env:USERPROFILE\.claude\commands\hacky-hours.md"
 
 - [README.md](../../README.md)
 - [import-as-resource.md](./import-as-resource.md) — use this repo as context in another project
-- [starter-prompts/](../starter-prompts/) — copy-paste prompts for each level
+- [starter-prompts/](../starter-prompts/) — copy-paste prompts for each step

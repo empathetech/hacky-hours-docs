@@ -1,6 +1,6 @@
 # STYLE_GUIDE.md
 
-**Level 2 — Design** | Contributed by: Product owner, design collaborators
+**Step 2 — Design** | Contributed by: Product owner, design collaborators
 
 > **What is this?** A style guide captures how your product looks and sounds — its colors, fonts, tone of voice, and overall personality. Think of it as a mood board plus a set of ground rules so everything feels consistent, whether you're building the first screen or the fiftieth. You don't need a design background — just opinions about how your product should feel.
 

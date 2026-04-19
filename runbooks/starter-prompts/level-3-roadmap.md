@@ -1,4 +1,4 @@
-# Starter Prompt: Level 3 — Roadmap
+# Starter Prompt: Step 3 — Roadmap
 
 Use this when your design documents are complete and you're ready to prioritize what to build.
 
@@ -7,7 +7,7 @@ Use this when your design documents are complete and you're ready to prioritize 
 ## Prompt
 
 ```
-I've completed my Level 2 design documents. Here they are:
+I've completed my Step 2 design documents. Here they are:
 
 [paste each completed design document, or summarize the key decisions if they're long]
 

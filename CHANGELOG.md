@@ -7,6 +7,31 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [2.0.1] — 2026-04-18
+
+Documentation sweep: all template docs, runbooks, and the README brought up to date with v2.0.0 terminology and command surface.
+
+### Fixed
+
+- **Level → Step language** — all template docs (`01-ideate/`, `02-design/`, `03-roadmap/`, `04-build/`), step READMEs, and runbooks now consistently use "step" instead of "level"
+- **Stale v1.x command references** — `install-as-command.md` command table, `cross-tool-usage.md`, `github-action-sync.md`, `document-hygiene.md`, and `04-build/README.md` updated to v2.0.0 command surface (`step`, `review`, `learn`, `update`, `tools`)
+- **"four-level" → "five-step"** in README, FAQ, `import-as-resource.md`, and `cross-tool-usage.md`
+- **Removed `/hacky-hours link` reference** from `02-design/README.md` Claude Guidance — command was removed in v2.0.0
+- **Removed `/hacky-hours checklist` reference** from `02-design/TESTING.md` — now points to `/hacky-hours help step 4`
+
+### Added
+
+- **README: Command Reference section** — full command breakdown organized by the five parent groups, added after the install section
+- **README: Step 5 — Iterate in the diagram** — Mermaid diagram now shows all five steps with the loop-back arrow from Step 5 to Step 4
+- **README: Five Steps table** — replaces the old Four Levels table, includes Step 5
+
+### Changed
+
+- **README: "paralyzed" → "stuck in endless planning"** — inclusive language follow-up to PR #2
+- **README: Diagram labels** — subgraph labels updated from `L1–L4 "Level N"` to `S1–S5 "Step N"`
+
+---
+
 ## [2.0.0] — 2026-04-11
 
 **MAJOR VERSION — breaking changes to all command entry points.** See [ADR: v2.0.0 Command Surface Redesign](hacky-hours/02-design/decisions/2026-04-11-v2-command-surface-redesign.md) for the full rationale and migration table.

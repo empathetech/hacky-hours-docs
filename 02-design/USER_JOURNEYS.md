@@ -1,6 +1,6 @@
 # USER_JOURNEYS.md
 
-**Level 2 — Design** | Contributed by: Product owner, design, with Claude facilitation
+**Step 2 — Design** | Contributed by: Product owner, design, with Claude facilitation
 
 > **What is this?** A user journey is a step-by-step walkthrough of what someone does in your product — like narrating a short story where the user is the main character. "First they see the landing page, then they click Sign Up, then they fill in their name..." Walking through these stories on paper catches confusing flows and missing screens before you build them.
 

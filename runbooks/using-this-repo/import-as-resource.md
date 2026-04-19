@@ -1,6 +1,6 @@
 # Import hacky-hours-docs as a Resource
 
-You can bring the Hacky Hours framework into an existing project so Claude Code can reference it as in-session context. This is useful when you want Claude to follow the four-level system inside a codebase that already has its own structure.
+You can bring the Hacky Hours framework into an existing project so Claude Code can reference it as in-session context. This is useful when you want Claude to follow the five-step framework inside a codebase that already has its own structure.
 
 Three approaches are described below, from most to least recommended. **If you're not sure which to pick:** Option 1 is best for ongoing projects, Option 2 is easiest for a quick start, and Option 3 is for when you just need a file or two.
 
@@ -75,7 +75,7 @@ Add to your project's `CLAUDE.md`:
 ```markdown
 ## Hacky Hours Framework
 
-This project follows the Hacky Hours four-level documentation framework.
+This project follows the Hacky Hours five-step documentation framework.
 The framework reference lives at: /path/to/hacky-hours-docs/ (adjust to your local path)
 
 When helping with design decisions, read the relevant template from the framework before making suggestions.

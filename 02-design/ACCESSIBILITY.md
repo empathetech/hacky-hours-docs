@@ -1,6 +1,6 @@
 # ACCESSIBILITY.md
 
-**Level 2 — Design** | Contributed by: Product owner, with Claude facilitation
+**Step 2 — Design** | Contributed by: Product owner, with Claude facilitation
 
 > **What is this?** Accessibility means making sure your product works for everyone — including people who use screen readers, navigate by keyboard, have low vision, or experience your product differently than you do. This document helps you plan for that from the start, which is much easier than fixing it later. Good accessibility also makes your product better for *all* users: clearer language, better contrast, simpler navigation.
 

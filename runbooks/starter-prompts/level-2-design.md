@@ -1,6 +1,6 @@
-# Starter Prompt: Level 2 — Design
+# Starter Prompt: Step 2 — Design
 
-Use this at the start of a Level 2 design session to decide which documents your project needs and begin filling them in.
+Use this at the start of a Step 2 design session to decide which documents your project needs and begin filling them in.
 
 ---
 
@@ -13,7 +13,7 @@ I've completed my PRODUCT_OVERVIEW.md. Here it is:
 
 [paste your PRODUCT_OVERVIEW.md contents here]
 
-I'm now at Level 2 — Design. The available design documents are:
+I'm now at Step 2 — Design. The available design documents are:
 - ARCHITECTURE.md (how the technical pieces fit together)
 - DATA_MODEL.md (what data the product stores and how it's structured)
 - USER_JOURNEYS.md (how users move through the product)

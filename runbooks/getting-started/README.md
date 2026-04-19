@@ -81,7 +81,7 @@ Follow Path B but replace `09-github-desktop.md` with [`03-git-basics.md`](./03-
 
 Once all of that works, head to [`01-ideate/`](../../01-ideate/) and start building.
 
-Before you start, take a look at the [`example/`](../../example/) folder — it shows a completed Level 1 and Level 2 so you know what you're working toward.
+Before you start, take a look at the [`example/`](../../example/) folder — it shows completed Steps 1 and 2 so you know what you're working toward.
 
 ---
 

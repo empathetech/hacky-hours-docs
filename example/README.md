@@ -8,16 +8,16 @@ It is not a real app. It exists to show you what filled-in documents look like a
 
 ## What's Here
 
-| File | Level | Status |
-|------|-------|--------|
-| [`01-ideate/IDEATION.md`](./01-ideate/IDEATION.md) | 1 — Ideation | Complete example |
-| [`01-ideate/PRODUCT_OVERVIEW.md`](./01-ideate/PRODUCT_OVERVIEW.md) | 1 — Ideation | Complete example |
+| File | Step | Status |
+|------|------|--------|
+| [`01-ideate/IDEATION.md`](./01-ideate/IDEATION.md) | 1 — Ideate | Complete example |
+| [`01-ideate/PRODUCT_OVERVIEW.md`](./01-ideate/PRODUCT_OVERVIEW.md) | 1 — Ideate | Complete example |
 | [`02-design/ARCHITECTURE.md`](./02-design/ARCHITECTURE.md) | 2 — Design | Complete example |
 | [`02-design/DATA_MODEL.md`](./02-design/DATA_MODEL.md) | 2 — Design | Complete example with ERD |
 | [`02-design/USER_JOURNEYS.md`](./02-design/USER_JOURNEYS.md) | 2 — Design | Complete example with flowchart |
 | [`02-design/SECURITY_PRIVACY.md`](./02-design/SECURITY_PRIVACY.md) | 2 — Design | Complete example |
 
-Levels 3 and 4 are not included — by the time you reach those, you'll have enough context from levels 1 and 2 to understand the pattern.
+Steps 3 and 4 are not included — by the time you reach those, you'll have enough context from steps 1 and 2 to understand the pattern.
 
 ---
 
@@ -27,7 +27,7 @@ Levels 3 and 4 are not included — by the time you reach those, you'll have eno
 2. Compare it to the blank template in the corresponding folder (`01-ideate/`, `02-design/`, etc.)
 3. Use it as a reference when filling in your own project's documents
 
-When you're working with Claude and you're not sure what level of detail is expected, you can say: "Here's an example of a completed document from the NeighborBoard example project. I want something similar for my project."
+When you're working with Claude and you're not sure how much detail to include, you can say: "Here's an example of a completed document from the NeighborBoard example project. I want something similar for my project."
 
 ---
 

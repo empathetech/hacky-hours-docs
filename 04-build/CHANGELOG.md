@@ -1,6 +1,6 @@
 # CHANGELOG.md
 
-**Level 4 — Build** | Maintained by: Product owner, updated at each release
+**Step 4 — Build** | Maintained by: Product owner, updated at each release
 
 This file records what changed in each version of the product. It's written for humans — your users, your collaborators, your future self. Use plain language, not commit messages.
 

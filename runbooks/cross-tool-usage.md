@@ -59,11 +59,11 @@ grep -A 50 "## Project State Machine" CLAUDE.md > .cursorrules
 ## What You Lose Without the Slash Command
 
 The slash command provides:
-- **Argument routing** (`/hacky-hours ideate`, `/hacky-hours audit`, etc.)
+- **Argument routing** (`/hacky-hours step 1`, `/hacky-hours review 1`, etc.)
 - **Automatic file scaffolding** (creates the folder structure)
-- **Guided workflows** (step-by-step facilitation for each level)
+- **Guided workflows** (step-by-step facilitation for each step)
 
-Without it, you get the same framework behavior through natural language. Instead of `/hacky-hours ideate`, you say "help me with ideation." Instead of `/hacky-hours audit`, you say "check if this project is ready to release."
+Without it, you get the same framework behavior through natural language. Instead of `/hacky-hours step 1`, you say "help me with ideation." Instead of `/hacky-hours review 1`, you say "check if this project is ready to release."
 
 The artifacts, design constraints, and project state machine all work identically — the difference is in how you invoke them, not what they do.
 
@@ -71,7 +71,7 @@ The artifacts, design constraints, and project state machine all work identicall
 
 ## What You Keep
 
-- The four-level structure (Ideation, Design, Roadmap, Build)
+- The five-step structure (Ideate, Design, Roadmap, Build, Iterate)
 - Design document templates
 - Safety-first defaults
 - The iterate cycle (capture, synthesize, prioritize, build)

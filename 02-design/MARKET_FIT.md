@@ -1,6 +1,6 @@
 # MARKET_FIT.md
 
-**Level 2 — Design** | Contributed by: Product owner, with Claude facilitation
+**Step 2 — Design** | Contributed by: Product owner, with Claude facilitation
 
 > **What is this?** Market fit is about answering one question honestly: "Would real people actually use this, and why?" This document helps you get specific about who your users are, what pain they have, and why your product is the right solution — before you spend time building something nobody asked for.
 

@@ -1,4 +1,4 @@
-# Starter Prompt: Level 1 — Ideation
+# Starter Prompt: Step 1 — Ideation
 
 Use this when you're starting fresh and want to get your ideas out of your head and into `IDEATION.md`.
 

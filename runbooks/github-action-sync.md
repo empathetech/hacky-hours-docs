@@ -69,7 +69,7 @@ Merge a PR and check the **Actions** tab to see the workflow run. The first time
 
 **Doesn't:**
 - Close GitHub Issues — Claude Code handles that in-session via `gh issue close`
-- Create new CHANGELOG version sections — run `/hacky-hours sync` to publish a release
+- Create new CHANGELOG version sections — run `/hacky-hours update 1` to publish a release
 - Handle merge conflicts if you've made manual edits to both files simultaneously
 
 ---
@@ -79,7 +79,7 @@ Merge a PR and check the **Actions** tab to see the workflow run. The first time
 Claude uses the PR title and branch name to find the BACKLOG item. For best results:
 
 - Keep BACKLOG item titles descriptive and close to what the PR will be called
-- After running `/hacky-hours sync`, BACKLOG items become GitHub Issue links — Claude can also use the issue number in the branch name (e.g., `feat/42-add-auth`) for more reliable matching
+- After running `/hacky-hours update 2`, BACKLOG items become GitHub Issue links — Claude can also use the issue number in the branch name (e.g., `feat/42-add-auth`) for more reliable matching
 
 ---
 

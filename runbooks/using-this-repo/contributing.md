@@ -37,7 +37,7 @@ All contributions should follow the skeleton format used throughout this repo:
 ```markdown
 # Document Title
 
-**Level N — [Level Name]** | Contributed by: [role(s)]
+**Step N — [Step Name]** | Contributed by: [role(s)]
 
 One paragraph explaining what this document is for and who should fill it in.
 

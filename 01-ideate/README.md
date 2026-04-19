@@ -1,8 +1,8 @@
-# Level 1: Ideation
+# Step 1: Ideation
 
 This is where every project begins. Before architecture, before code, before any plan — you need to get your ideas out of your head and onto the page.
 
-Level 1 has two documents:
+Step 1 has two documents:
 
 | Document | Purpose |
 |----------|---------|
@@ -11,7 +11,7 @@ Level 1 has two documents:
 
 ---
 
-## How to Work Through This Level
+## How to Work Through This Step
 
 1. **Start with `IDEATION.md`** — write freely, without structure. Don't edit yourself. Capture everything.
 2. **Share it with Claude** — ask Claude to help you identify themes, gaps, and contradictions in your ideas.
@@ -24,7 +24,7 @@ Level 1 has two documents:
 
 ## Done Enough to Move On?
 
-You're ready for Level 2 when `PRODUCT_OVERVIEW.md` clearly answers:
+You're ready for Step 2 when `PRODUCT_OVERVIEW.md` clearly answers:
 - **Who** is this for?
 - **What** does it do, and in what form?
 - **Where** does it live (mobile, web, desktop, API)?
@@ -35,9 +35,9 @@ It doesn't have to be perfect. It has to be clear enough that someone unfamiliar
 
 ---
 
-## Claude Guidance for This Level
+## Claude Guidance for This Step
 
-When helping a user at Level 1:
+When helping a user at Step 1:
 - Ask open-ended questions to draw out vision, not yes/no questions
 - Don't introduce technical constraints too early — this is not the time for "what database will you use?"
 - If the user seems stuck, prompt with: "Who is the first person you'd want to use this, and what would they do with it?"
@@ -48,6 +48,6 @@ When helping a user at Level 1:
 
 ## Related
 
-- [Level 2: Design](../02-design/README.md)
+- [Step 2: Design](../02-design/README.md)
 - [IDEATION.md template](./IDEATION.md)
 - [PRODUCT_OVERVIEW.md template](./PRODUCT_OVERVIEW.md)

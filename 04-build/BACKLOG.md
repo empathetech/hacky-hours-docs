@@ -1,6 +1,6 @@
 # BACKLOG.md
 
-**Level 4 — Build** | Maintained by: Product owner, updated continuously
+**Step 4 — Build** | Maintained by: Product owner, updated continuously
 
 The backlog is the ordered list of tasks that need to be completed to reach each release. Tasks are discrete, implementable units of work — not vague goals. Each task maps to a branch name, a semantic version, and a design document that justifies it.
 

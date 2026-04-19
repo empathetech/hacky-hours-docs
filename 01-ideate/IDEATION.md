@@ -1,6 +1,6 @@
 # IDEATION.md
 
-**Level 1 — Ideation** | Contributed by: You (the product owner)
+**Step 1 — Ideation** | Contributed by: You (the product owner)
 
 This is your free-writing space. No structure required. No editing yourself. Write down everything you're thinking about this project — half-formed ideas, questions you don't have answers to, things that excite or worry you, references to other products you admire, problems you've experienced firsthand.
 
@@ -32,5 +32,5 @@ When you have enough to work with, share this document with Claude and ask it to
 
 ## Related
 
-- [Level 1 README](./README.md)
+- [Step 1 README](./README.md)
 - [PRODUCT_OVERVIEW.md](./PRODUCT_OVERVIEW.md) — where these ideas get synthesized

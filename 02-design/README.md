@@ -1,4 +1,4 @@
-# Level 2: Design
+# Step 2: Design
 
 Design documents define how your product works — in detail, and from multiple angles. Together, they give Claude (and future human collaborators) the context needed to make good decisions during implementation.
 
@@ -6,7 +6,7 @@ Design documents define how your product works — in detail, and from multiple 
 
 ---
 
-## Documents in This Level
+## Documents in This Step
 
 | Document | Use when... |
 |----------|-------------|
@@ -25,7 +25,7 @@ Design documents define how your product works — in detail, and from multiple 
 
 ---
 
-## How to Work Through This Level
+## How to Work Through This Step
 
 1. Share `PRODUCT_OVERVIEW.md` with Claude and ask which documents apply to your project
 2. Work through each relevant document one at a time — don't try to fill everything in at once
@@ -36,16 +36,16 @@ Design documents define how your product works — in detail, and from multiple 
 
 ## Done Enough to Move On?
 
-You're ready for Level 3 when:
+You're ready for Step 3 when:
 - A new collaborator could read these docs and understand how the product is meant to work — they don't need to be complete, they need to be honest
 - There are no major open questions about how core features function
 - `SECURITY_PRIVACY.md` and `ACCESSIBILITY.md` exist in some form, even if minimal
 
 ---
 
-## Claude Guidance for This Level
+## Claude Guidance for This Step
 
-When helping a user at Level 2:
+When helping a user at Step 2:
 - Begin every design session by re-reading `PRODUCT_OVERVIEW.md` — especially the **Constraints & Values** section — to stay grounded in the product's licensing intent, privacy stance, and infrastructure preferences
 - Help the user select only the documents they actually need — avoid over-engineering
 - When a document reveals a gap or contradiction in `PRODUCT_OVERVIEW.md`, surface it clearly
@@ -55,12 +55,12 @@ When helping a user at Level 2:
 - `LICENSING.md` should be created early — before architecture decisions lock in dependency choices. License compatibility is much easier to reason about before than after
 - **Safety-first throughout:** when recommending tools, services, or approaches, lead with the free/simple/privacy-preserving option. Explain tradeoffs before suggesting complexity. The user can choose a more powerful path — but they should choose it knowingly
 - When design decisions change during iteration, write a short Architecture Decision Record (ADR) in `decisions/` rather than rewriting the original document — this preserves the reasoning behind original decisions
-- If `ARCHITECTURE.md` describes a multi-repo split, prompt the user to create `RELATED_REPOS.md` — or run `/hacky-hours link <path>` from the dependent repo to generate it automatically
+- If `ARCHITECTURE.md` describes a multi-repo split, prompt the user to create `RELATED_REPOS.md`
 
 ---
 
 ## Related
 
-- [Level 1: Ideation](../01-ideate/README.md)
-- [Level 3: Roadmap](../03-roadmap/README.md)
+- [Step 1: Ideation](../01-ideate/README.md)
+- [Step 3: Roadmap](../03-roadmap/README.md)
 - [diagrams/](./diagrams/)

@@ -1,6 +1,6 @@
 # TESTING.md
 
-**Level 2 — Design** | [Your Project Name]
+**Step 2 — Design** | [Your Project Name]
 
 ---
 
@@ -85,7 +85,7 @@
 >
 > Don't prescribe a testing framework. Recommend based on the user's stack and experience level. For beginners, start with manual testing checklists before introducing automation.
 >
-> The pre-merge checklist in `/hacky-hours checklist` already includes "Change has been manually tested against the relevant user journey" — this doc is where they define what that means for their specific product.
+> The pre-merge checklist in `/hacky-hours help step 4` already includes "Change has been manually tested against the relevant user journey" — this doc is where they define what that means for their specific product.
 
 ---
 

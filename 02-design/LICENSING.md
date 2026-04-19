@@ -1,6 +1,6 @@
 # LICENSING.md
 
-**Level 2 — Design** | Contributed by: Product owner, with Claude facilitation
+**Step 2 — Design** | Contributed by: Product owner, with Claude facilitation
 
 > **What is this?** A license is a set of rules that says what other people can and can't do with your code — and what you can and can't do with code written by others. This document helps you pick a license for your product and make sure the tools and libraries you use are compatible with that choice. It sounds legal (and it is), but the decisions are straightforward once you understand your options.
 
@@ -8,7 +8,7 @@ This document covers two things: (1) the license you choose for **your product**
 
 ---
 
-> **Claude Guidance:** Ask about licensing early — at the start of Level 2, not the end. The license choice affects architecture (can we use this library?), business model (can we charge for this?), and compliance (do we have to publish our source?). Keep explanations plain — most people building with this framework haven't navigated licensing before. Lead with a simple question: "Do you want others to be able to use, modify, or build on your code freely?" Then walk through the implications. Never assume a license — always surface the choice explicitly.
+> **Claude Guidance:** Ask about licensing early — at the start of Step 2, not the end. The license choice affects architecture (can we use this library?), business model (can we charge for this?), and compliance (do we have to publish our source?). Keep explanations plain — most people building with this framework haven't navigated licensing before. Lead with a simple question: "Do you want others to be able to use, modify, or build on your code freely?" Then walk through the implications. Never assume a license — always surface the choice explicitly.
 
 ---
 

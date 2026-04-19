@@ -1,6 +1,6 @@
 # Starter Prompts
 
-These are copy-paste conversation starters for each level of the Hacky Hours framework. Use them to kick off a Claude Code session without staring at a blank cursor wondering what to say.
+These are copy-paste conversation starters for each step of the Hacky Hours framework. Use them to kick off a Claude Code session without staring at a blank cursor wondering what to say.
 
 Each prompt is designed to:
 - Give Claude the context it needs to be helpful
@@ -20,12 +20,12 @@ You don't have to use these verbatim. Modify them to fit your situation. The goa
 
 ---
 
-## Prompts by Level
+## Prompts by Step
 
-| Level | What you're doing | Prompt file |
-|-------|------------------|-------------|
-| 1 — Ideation | Brain-dumping ideas | [level-1-ideation.md](./level-1-ideation.md) |
-| 1 — Ideation | Synthesizing into Product Overview | [level-1-product-overview.md](./level-1-product-overview.md) |
+| Step | What you're doing | Prompt file |
+|------|------------------|-------------|
+| 1 — Ideate | Brain-dumping ideas | [level-1-ideation.md](./level-1-ideation.md) |
+| 1 — Ideate | Synthesizing into Product Overview | [level-1-product-overview.md](./level-1-product-overview.md) |
 | 2 — Design | Starting design documents | [level-2-design.md](./level-2-design.md) |
 | 3 — Roadmap | Building the roadmap | [level-3-roadmap.md](./level-3-roadmap.md) |
 | 4 — Build | Starting a task | [level-4-build.md](./level-4-build.md) |

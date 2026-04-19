@@ -1,4 +1,4 @@
-# Starter Prompt: Level 4 — Build
+# Starter Prompt: Step 4 — Build
 
 Use this at the start of each implementation task. One session = one task from BACKLOG.md.
 

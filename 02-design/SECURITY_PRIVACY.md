@@ -1,6 +1,6 @@
 # SECURITY_PRIVACY.md
 
-**Level 2 — Design** | Contributed by: Product owner, with Claude facilitation
+**Step 2 — Design** | Contributed by: Product owner, with Claude facilitation
 
 > **What is this?** This document helps you think through how your product protects the people who use it — what personal information it collects, how it keeps that information safe, and what could go wrong. You don't need to be a security expert. You just need to think honestly about what you're asking users to trust you with.
 
@@ -8,7 +8,7 @@ This document defines how your product handles sensitive data, protects its user
 
 ---
 
-> **Claude Guidance:** This document should be revisited before every implementation task in Level 4. When helping the user fill it out, ask: "What's the most sensitive thing your product stores?" and "What would happen if an attacker got into your database?" Keep the language approachable — no jargon. Flag any gaps (e.g., "you mentioned email addresses but haven't addressed how they're stored") and recommend minimizing data collection where possible. Reference OWASP Top 10 in plain language when relevant. Do not skip this document even for "small" projects — a small project with real users has real responsibilities.
+> **Claude Guidance:** This document should be revisited before every implementation task in Step 4. When helping the user fill it out, ask: "What's the most sensitive thing your product stores?" and "What would happen if an attacker got into your database?" Keep the language approachable — no jargon. Flag any gaps (e.g., "you mentioned email addresses but haven't addressed how they're stored") and recommend minimizing data collection where possible. Reference OWASP Top 10 in plain language when relevant. Do not skip this document even for "small" projects — a small project with real users has real responsibilities.
 >
 > **Data minimization is a security strategy, not just a privacy preference.** Less data stored = smaller breach impact. Push back on collecting data "just in case." Every field in the data model should have a clear reason to exist.
 >

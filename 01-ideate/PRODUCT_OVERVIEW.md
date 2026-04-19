@@ -1,14 +1,14 @@
 # PRODUCT_OVERVIEW.md
 
-**Level 1 — Ideation** | Contributed by: Product owner, with Claude facilitation
+**Step 1 — Ideation** | Contributed by: Product owner, with Claude facilitation
 
 This document answers the five foundational questions about your product. It is synthesized from `IDEATION.md` through a conversation with Claude. Every answer here should come from you — Claude helps draw it out and structure it, but you make the decisions.
 
-This document becomes the source of truth for all Level 2 design work. When in doubt about the product's direction, come back here.
+This document becomes the source of truth for all Step 2 design work. When in doubt about the product's direction, come back here.
 
 ---
 
-> **Claude Guidance:** Help the user fill in each section by asking focused questions drawn from their `IDEATION.md`. If a section is vague, push for specificity — "anyone could use it" is not a useful audience definition. Keep language plain and jargon-free. Once the five Ws are drafted, work through the **Constraints & Values** section before declaring Level 1 done — these answers directly shape Level 2 design choices. Once a complete draft exists, read it back to the user in plain language and ask if it matches their vision.
+> **Claude Guidance:** Help the user fill in each section by asking focused questions drawn from their `IDEATION.md`. If a section is vague, push for specificity — "anyone could use it" is not a useful audience definition. Keep language plain and jargon-free. Once the five Ws are drafted, work through the **Constraints & Values** section before declaring Step 1 done — these answers directly shape Step 2 design choices. Once a complete draft exists, read it back to the user in plain language and ask if it matches their vision.
 
 ---
 
@@ -48,7 +48,7 @@ This document becomes the source of truth for all Level 2 design work. When in d
 
 *Will this product's source code be open source (publicly visible and reusable) or closed source (private)?*
 
-*If open source: which license? (MIT, Apache 2.0, GPL, etc.) If you're not sure yet, note that — it's a question to resolve early in Level 2.*
+*If open source: which license? (MIT, Apache 2.0, GPL, etc.) If you're not sure yet, note that — it's a question to resolve early in Step 2.*
 
 *Is this product intended to generate revenue? If so, how? (e.g., subscription, one-time purchase, free with premium features, grants/donations)*
 
@@ -72,13 +72,13 @@ This document becomes the source of truth for all Level 2 design work. When in d
 
 ---
 
-> **Claude Guidance:** Work through these questions with the user before moving to Level 2. These constraints directly shape which architecture choices are appropriate, what data to collect, and which third-party services are compatible. If the user hasn't thought about licensing, explain the basics in plain language: open source vs. closed source, and whether they plan to charge for the product. Default recommendation for personal or community projects: MIT license, managed hosting, minimum viable data collection.
+> **Claude Guidance:** Work through these questions with the user before moving to Step 2. These constraints directly shape which architecture choices are appropriate, what data to collect, and which third-party services are compatible. If the user hasn't thought about licensing, explain the basics in plain language: open source vs. closed source, and whether they plan to charge for the product. Default recommendation for personal or community projects: MIT license, managed hosting, minimum viable data collection.
 
 ---
 
 ## Related
 
-- [Level 1 README](./README.md)
+- [Step 1 README](./README.md)
 - [IDEATION.md](./IDEATION.md) — the source material for this document
-- [Level 2: Design](../02-design/README.md) — the next step after this document is complete
+- [Step 2: Design](../02-design/README.md) — the next step after this document is complete
 - [LICENSING.md](../02-design/LICENSING.md) — seed from the Licensing Intent answers above

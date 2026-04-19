@@ -2,7 +2,7 @@
 
 As your project grows, its documentation can become a liability — bloated files make it harder for Claude to give accurate answers, documents start contradicting each other, and it becomes unclear what's actually true right now. This runbook describes how to keep your framework documents lean, accurate, and useful over time.
 
-> **Good news:** If you're using the `/hacky-hours` command, most of this happens automatically. The `iterate`, `audit`, and `optimize` commands handle archiving, cleanup, and consistency checks for you. This runbook explains the *why* behind what those commands do — and covers manual maintenance for people who don't use the command.
+> **Good news:** If you're using the `/hacky-hours` command, most of this happens automatically. The `step 5`, `review 1`, and `review 2` commands handle archiving, cleanup, and consistency checks for you. This runbook explains the *why* behind what those commands do — and covers manual maintenance for people who don't use the command.
 
 ---
 
@@ -76,7 +76,7 @@ What does this mean going forward?
 
 Update this whenever your core who/what/where/when/why changes. It should describe the product as it is now, not as you originally imagined it.
 
-### IDEATION.md — archive after Level 1
+### IDEATION.md — archive after Step 1
 
 Once PRODUCT_OVERVIEW.md is solid, move IDEATION.md to `archive/`. It did its job. Keeping it in the active set adds noise.
 
@@ -92,7 +92,7 @@ When a milestone is done, move its section to `archive/roadmap/`. The active roa
 archive/
   changelog/        # Old CHANGELOG entries
   roadmap/          # Completed milestone sections
-  IDEATION.md       # Moved here after Level 1 is complete
+  IDEATION.md       # Moved here after Step 1 is complete
 ```
 
 `archive/` is cold storage, not a graveyard. Everything in it is still accessible through git, but keeping it in a named folder makes it findable without cluttering your working docs.

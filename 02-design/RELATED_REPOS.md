@@ -1,12 +1,12 @@
 # RELATED_REPOS.md
 
-**Level 2 — Design** | Contributed by: Product owner, with Claude facilitation
+**Step 2 — Design** | Contributed by: Product owner, with Claude facilitation
 
 Some products are built across multiple repositories — a backend and a frontend, a service and its CLI, a shared library and the apps that use it. When that's the case, design decisions in one repo constrain what's possible in the others. This document captures those relationships: which repos exist, who owns what, and where to look before making decisions that cross repo boundaries.
 
 ---
 
-> **Claude Guidance:** Only create this document when the product genuinely spans multiple repos — don't manufacture cross-repo complexity that doesn't exist. If the user is at Level 2 and their ARCHITECTURE.md describes a multi-repo split, ask whether a related repo exists or is planned and suggest creating this document. The most valuable section is the Decision Routing Table — it prevents the dependent repo from making decisions that contradict already-settled design in the authoritative repo. Use the local path if both repos are cloned side by side; fall back to the GitHub URL if not.
+> **Claude Guidance:** Only create this document when the product genuinely spans multiple repos — don't manufacture cross-repo complexity that doesn't exist. If the user is at Step 2 and their ARCHITECTURE.md describes a multi-repo split, ask whether a related repo exists or is planned and suggest creating this document. The most valuable section is the Decision Routing Table — it prevents the dependent repo from making decisions that contradict already-settled design in the authoritative repo. Use the local path if both repos are cloned side by side; fall back to the GitHub URL if not.
 
 ---
 
@@ -61,7 +61,7 @@ When working through this document with a user:
 
 - Read ARCHITECTURE.md first — the system overview and component boundaries tell you what the related repo is responsible for
 - The Decision Routing Table is the most important output: walk through the related repo's likely design questions one by one and map each to the section in this repo that answers it
-- If the local path isn't known yet (e.g., the related repo hasn't been created), leave it as a placeholder and note that `/hacky-hours link` can populate this document once both repos exist
+- If the local path isn't known yet (e.g., the related repo hasn't been created), leave it as a placeholder and fill it in once the repo is created
 - When generating this document for the **dependent** repo (the one that conforms to the authoritative repo), reverse the table direction: "when this repo needs to know X, read Y in the other repo"
 - If both repos are already cloned locally, Claude can read the other repo's design docs directly using the local path — this is always preferred over summarizing from memory
 

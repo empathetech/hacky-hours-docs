@@ -1,12 +1,12 @@
 # ROADMAP.md
 
-**Level 3 — Roadmap** | Contributed by: Product owner, with Claude facilitation
+**Step 3 — Roadmap** | Contributed by: Product owner, with Claude facilitation
 
 This document prioritizes features across release tiers and defines the milestones needed to reach each one. It translates design decisions into a sequenced plan for building.
 
 ---
 
-> **Claude Guidance:** Read all Level 2 design documents before helping the user fill this out. Start by listing every feature mentioned across those documents, then help the user categorize them. For each feature proposed for the MVP, ask: "Can you prove the product's value without this?" Push scope to V1 or V2 aggressively. Milestones should be phrased as outcomes ("a user can sign up and complete their first task") rather than technical deliverables ("implement user auth"). Flag any feature that introduces significant security or complexity risk — those are good candidates to defer.
+> **Claude Guidance:** Read all Step 2 design documents before helping the user fill this out. Start by listing every feature mentioned across those documents, then help the user categorize them. For each feature proposed for the MVP, ask: "Can you prove the product's value without this?" Push scope to V1 or V2 aggressively. Milestones should be phrased as outcomes ("a user can sign up and complete their first task") rather than technical deliverables ("implement user auth"). Flag any feature that introduces significant security or complexity risk — those are good candidates to defer.
 
 ---
 

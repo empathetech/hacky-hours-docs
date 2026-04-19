@@ -6,7 +6,7 @@ A community framework for building apps with LLMs — the Hacky Hours way — cr
 
 This repo is two things at once:
 
-1. **A documentation framework** — explains the Hacky Hours philosophy, four-level system, and best practices for LLM-assisted development
+1. **A documentation framework** — explains the Hacky Hours philosophy, five-step system, and best practices for LLM-assisted development
 2. **A fork-able project template** — fork it, fill in the templates for your own project, and use the resulting docs as in-session context for Claude Code
 
 ---
@@ -15,7 +15,7 @@ This repo is two things at once:
 
 You drive the product. Claude helps you build it — but it needs your direction, not just your instructions. This framework gives you the artifacts to provide that direction: who you're building for, what you're making, how it should work, and what values it should uphold.
 
-The goal isn't to vibe-code without direction, and it isn't to get paralyzed trying to plan everything perfectly. It's to build with confidence, ownership, and growing expertise — one level at a time.
+The goal isn't to vibe-code without direction, and it isn't to get stuck in endless planning. It's to build with confidence, ownership, and growing expertise — one step at a time.
 
 Imperfect documents are fine. Honest documents are what matter.
 
@@ -25,49 +25,57 @@ Imperfect documents are fine. Honest documents are what matter.
 
 ## How It Works
 
-The diagram below shows the four levels from left to right — you start with an idea, work through each level, and end with a shipped product. Each box is a document you'll fill in along the way.
+The diagram below shows the five steps — you start with an idea, work through each step, and ship. Step 5 loops back so you keep improving after each release.
 
 ```mermaid
 flowchart TD
-    A([Your Idea]) --> L1
+    A([Your Idea]) --> S1
 
-    subgraph L1 ["01-ideate — Capture & Synthesize"]
+    subgraph S1 ["Step 1 — Ideate"]
         B["IDEATION.md\nStream of consciousness notes"] --> C["PRODUCT_OVERVIEW.md\nWho · What · Where · When · Why"]
     end
 
-    L1 --> L2
+    S1 --> S2
 
-    subgraph L2 ["02-design — Define the Product"]
+    subgraph S2 ["Step 2 — Design"]
         D[Architecture] & E[Data Model] & F[User Journeys] & G[Security & Privacy] & H[Style Guide]
     end
 
-    L2 --> L3
+    S2 --> S3
 
-    subgraph L3 ["03-roadmap — Prioritize"]
-        I["ROADMAP.md\nMVP → V1 → V2"]
+    subgraph S3 ["Step 3 — Roadmap"]
+        I["ROADMAP.md\nMVP → V1 → V2+"]
     end
 
-    L3 --> L4
+    S3 --> S4
 
-    subgraph L4 ["04-build — Build & Ship"]
+    subgraph S4 ["Step 4 — Build"]
         J[BACKLOG.md] --> K[Branches & PRs] --> L[Versioned Releases]
     end
 
-    L4 --> M([Shipped Product])
+    S4 --> M([Shipped 🎉])
+    M --> S5
+
+    subgraph S5 ["Step 5 — Iterate"]
+        N[Capture feedback] --> O[Amend docs] --> P[Queue next work]
+    end
+
+    S5 -.->|next milestone| S4
 ```
 
-Work through these levels in order. Each level's `README.md` explains what "done enough to move on" looks like.
+Work through these steps in order. Each step's `README.md` explains what "done enough to move on" looks like.
 
 ---
 
-## Four Levels
+## Five Steps
 
-| Level | Folder | What happens here |
-|-------|--------|-------------------|
-| 1 — Ideation | [`01-ideate/`](./01-ideate/) | Capture raw ideas → synthesize into a product overview |
+| Step | Folder | What happens here |
+|------|--------|-------------------|
+| 1 — Ideate | [`01-ideate/`](./01-ideate/) | Capture raw ideas → synthesize into a product overview |
 | 2 — Design | [`02-design/`](./02-design/) | Define the product in detail: architecture, data, UX, security |
-| 3 — Roadmap | [`03-roadmap/`](./03-roadmap/) | Prioritize features into MVP / V1 / V2 milestones |
+| 3 — Roadmap | [`03-roadmap/`](./03-roadmap/) | Prioritize features into MVP / V1 / V2+ milestones |
 | 4 — Build | [`04-build/`](./04-build/) | Track tasks, manage releases, maintain a changelog |
+| 5 — Iterate | _(loops back to Step 4)_ | Capture feedback, amend docs, queue the next round of work |
 
 ---
 
@@ -92,7 +100,7 @@ Work through these levels in order. Each level's `README.md` explains what "done
 | Resource | What it is |
 |----------|-----------|
 | [`example/`](./example/) | A completed fictional project (NeighborBoard) showing what filled-in documents look like |
-| [`runbooks/starter-prompts/`](./runbooks/starter-prompts/) | Copy-paste prompts to start Claude sessions at each level |
+| [`runbooks/starter-prompts/`](./runbooks/starter-prompts/) | Copy-paste prompts to start Claude sessions at each step |
 | [`GLOSSARY.md`](./GLOSSARY.md) | Plain-language definitions for every technical term |
 | [`runbooks/costs.md`](./runbooks/costs.md) | What this will cost you |
 | [`runbooks/FAQ.md`](./runbooks/FAQ.md) | Frequently asked questions |
@@ -107,7 +115,7 @@ Work through these levels in order. Each level's `README.md` explains what "done
 
 > If you're new to Claude Code, start with the [getting started guide](./runbooks/getting-started/README.md) first — this section is for people who already have it installed and running.
 
-Install `/hacky-hours` as a slash command so it works in **any repo you open** — no cloning required. A slash command is a shortcut you type in a Claude Code session (like `/hacky-hours ideate`) that gives Claude a specific workflow to follow.
+Install `/hacky-hours` as a slash command so it works in **any repo you open** — no cloning required. A slash command is a shortcut you type in a Claude Code session (like `/hacky-hours step 1`) that gives Claude a specific workflow to follow.
 
 **macOS / Linux:**
 ```bash
@@ -119,9 +127,61 @@ curl -fsSL https://raw.githubusercontent.com/empathetech/hacky-hours-docs/main/i
 irm https://raw.githubusercontent.com/empathetech/hacky-hours-docs/main/install.ps1 | iex
 ```
 
-Then type `/hacky-hours` in any Claude Code session. See [`runbooks/install-as-command.md`](./runbooks/install-as-command.md) for full instructions, including the complete argument list (`iterate`, `sync`, `migrate`, `dry-run`, `--root`, and more).
+Then type `/hacky-hours` in any Claude Code session. See [`runbooks/install-as-command.md`](./runbooks/install-as-command.md) for full instructions, including the complete argument list (`step`, `review`, `learn`, `update`, `tools`, `--root`, and more).
 
-> **Upgrading from v0.x?** Framework artifacts now default to a `hacky-hours/` subfolder. Run `/hacky-hours migrate` to move existing artifacts there — the command will show you exactly what it plans to do before touching anything.
+> **Upgrading from v1.x?** Run `/hacky-hours tools upgrade` after installing — it detects what's changed and shows you exactly what it plans to update before touching anything.
+
+---
+
+## Command Reference
+
+Once installed, type `/hacky-hours [command]` in any Claude Code session.
+
+**Work the framework**
+
+| Command | What it does |
+|---------|-------------|
+| `/hacky-hours` | Survey your project and report where you are |
+| `/hacky-hours step 1` | Step 1 — Ideation |
+| `/hacky-hours step 2` | Step 2 — Design |
+| `/hacky-hours step 3` | Step 3 — Roadmap |
+| `/hacky-hours step 4` | Step 4 — Build |
+| `/hacky-hours step 5` | Step 5 — Iterate (post-release cycle) |
+| `/hacky-hours step 0` | Explore without writing any files |
+
+**Review your project**
+
+| Command | What it does |
+|---------|-------------|
+| `/hacky-hours review 1` | Did we follow best practices? |
+| `/hacky-hours review 2` | Did we build it well? |
+| `/hacky-hours review 3` | Should we build something else? |
+
+**Onboard and transfer knowledge**
+
+| Command | What it does |
+|---------|-------------|
+| `/hacky-hours learn 1` | Tour — big-picture walkthrough |
+| `/hacky-hours learn 2` | Onboard — hands-on starter task |
+| `/hacky-hours learn 3` | Quiz — test your knowledge |
+
+**Ship and track**
+
+| Command | What it does |
+|---------|-------------|
+| `/hacky-hours update 1` | Publish a new release |
+| `/hacky-hours update 2` | Sync BACKLOG ↔ GitHub Issues |
+
+**Framework tools**
+
+| Command | What it does |
+|---------|-------------|
+| `/hacky-hours tools upgrade` | Update framework artifacts (also: adopt an existing codebase, migrate old layout) |
+| `/hacky-hours tools mode` | Toggle between plain-language and technical mode |
+| `/hacky-hours tools walkthrough` | How all commands work together |
+| `/hacky-hours help` | Full help message |
+
+Named aliases work too — `/hacky-hours step ideate`, `/hacky-hours review audit`, etc. All commands accept `--root <path>` to operate in a subdirectory.
 
 ---
 

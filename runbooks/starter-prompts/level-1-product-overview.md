@@ -1,4 +1,4 @@
-# Starter Prompt: Level 1 — Product Overview
+# Starter Prompt: Step 1 — Product Overview
 
 Use this when your IDEATION.md is filled in and you're ready to synthesize it into a PRODUCT_OVERVIEW.md.
 
@@ -34,9 +34,9 @@ Go one section at a time. Start with Who.
 
 ## When You're Done
 
-Read the completed PRODUCT_OVERVIEW.md out loud to yourself. If every sentence still sounds like your product, you're ready for Level 2. If anything feels off, fix it before moving on — everything downstream depends on this document being accurate.
+Read the completed PRODUCT_OVERVIEW.md out loud to yourself. If every sentence still sounds like your product, you're ready for Step 2. If anything feels off, fix it before moving on — everything downstream depends on this document being accurate.
 
-Then start a new session with the [Level 2 Design prompt](./level-2-design.md).
+Then start a new session with the [Step 2 Design prompt](./level-2-design.md).
 
 ---
 
