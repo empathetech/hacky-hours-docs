@@ -7,6 +7,16 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [2.0.2] — 2026-04-18
+
+Fix hardcoded version strings in the `tools upgrade` skill prompt.
+
+### Fixed
+
+- **Version string in skill prompt** — `description`, help message, version marker written to users' `CLAUDE.md`, and completion report all hardcoded `v2.0.0`; now correctly reflects the current release
+
+---
+
 ## [2.0.1] — 2026-04-18
 
 Documentation sweep: all template docs, runbooks, and the README brought up to date with v2.0.0 terminology and command surface.

@@ -6,4 +6,4 @@
 
 ## Next Milestone
 
-*Empty — v2.0.0 milestone complete.*
+*Empty — v2.0.2 milestone complete.*

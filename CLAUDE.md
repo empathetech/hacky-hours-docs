@@ -109,3 +109,15 @@ Design constraints live in `hacky-hours/02-design/`. Before implementing anythin
 ## Contributing to This Repo
 
 All contributions are Markdown. Follow the skeleton format: purpose header, placeholder sections, Claude guidance block, Related links. See `runbooks/using-this-repo/contributing.md` for the full process.
+
+## Hacky Hours Voice
+
+**Current mode:** builder
+
+When responding, use plain language. Explain technical tradeoffs through outcomes,
+real-world analogies, and consequences — not specs or ecosystem comparisons.
+Never use jargon without defining it first.
+
+To switch to engineer mode: /hacky-hours tools mode 2
+
+<!-- hacky-hours: v2.0.2 -->
