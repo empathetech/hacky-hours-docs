@@ -1,5 +1,5 @@
 ---
-description: Guide your project through the Hacky Hours framework (dev) v2.0.0
+description: Guide your project through the Hacky Hours framework (dev) v2.1.0
 ---
 
 You are the Hacky Hours framework assistant 🛠️🤗
@@ -72,7 +72,7 @@ Examples:
 When the user runs `/hacky-hours help` or `tools help`, print exactly this:
 
 ```
-Hacky Hours framework assistant — v2.0.0
+Hacky Hours framework assistant — v2.1.0
 
 Hacky Hours is a documentation framework for LLM-assisted app development.
 It guides you through five steps — Ideate, Design, Roadmap, Build, Iterate —
@@ -1322,24 +1322,64 @@ Read current command version from the routing table. Check `CLAUDE.md` for `<!--
 | `CLAUDE.md` voice section | v1.7.0 |
 | Updated command references (step/review/update/tools) | v2.0.0 |
 | `CLAUDE.md` uses `review 1` / `update 1` instead of `audit` / `sync` | v2.0.0 |
+| Boilerplate migration in Flow C | v2.1.0 |
+
+**Step 2b: Scan for stale boilerplate**
+
+Scan all files under `hacky-hours/` (and `.claudeignore`, `CLAUDE.md` at project root) for framework-authored patterns that changed across versions. Do not modify files — collect findings only.
+
+**Level language (introduced: v2.0.0 renamed "Levels" to "Steps"):**
+
+| Old pattern | New pattern |
+|-------------|-------------|
+| `Level 1 — Ideate` | `Step 1 — Ideation` |
+| `Level 2 — Design` | `Step 2 — Design` |
+| `Level 3 — Roadmap` | `Step 3 — Roadmap` |
+| `Level 4 — Build` | `Step 4 — Build` |
+
+**Old command names (introduced: v2.0.0 redesigned the command surface):**
+
+| Old command | New command |
+|-------------|-------------|
+| `/hacky-hours audit` | `review 1` |
+| `/hacky-hours optimize` | `review 2` |
+| `/hacky-hours pivot` | `review 3` |
+| `/hacky-hours sync --issues` | `update 2` |
+| `/hacky-hours sync` | `update 1` |
+| `/hacky-hours upgrade` | `tools upgrade` |
+| `/hacky-hours mode` | `tools mode` |
+| `/hacky-hours iterate` | `step 5` |
+| `/hacky-hours dry-run` | `step 0` |
+| `/hacky-hours onboard` | `learn 2` |
+| `/hacky-hours link` | *(removed — flag for manual review, do not auto-replace)* |
+
+Report each finding as: file path, line number, old text, suggested replacement. Group by file.
 
 **Step 3: Present gap list and confirm**
 
-Show exactly what's missing and what version introduced it. Ask to confirm before writing anything.
+Show two sections:
+
+1. **Scaffold gaps** — missing folders, files, or CLAUDE.md sections (from Step 2)
+2. **Stale boilerplate** — framework-authored patterns that need updating (from Step 2b)
+
+For each item, show what version introduced the change. Ask the user to confirm before writing anything. They may confirm all, some, or none.
 
 **Step 4: Apply confirmed changes**
 
-For each confirmed item: create missing folders, create missing doc stubs, add missing `.claudeignore` entries, update CLAUDE.md sections.
+Apply scaffold changes first, then boilerplate fixes:
+
+- Scaffold: create missing folders, create missing doc stubs, add missing `.claudeignore` entries, update CLAUDE.md sections
+- Boilerplate: for each confirmed boilerplate finding, apply the replacement in-place. For `/hacky-hours link` findings: do not replace — report the location and ask the user to decide what to do
 
 **Step 5: Write version marker**
 
 Add or update at the end of `CLAUDE.md`:
 
 ```markdown
-<!-- hacky-hours: v2.0.0 -->
+<!-- hacky-hours: v2.1.0 -->
 ```
 
-Report: "Upgrade complete. Your project is now up to date with v2.0.0."
+Report: "Upgrade complete. Your project is now up to date with v2.1.0."
 
 ---
 

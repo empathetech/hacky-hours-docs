@@ -1,6 +1,6 @@
 # LICENSING.md
 
-**Level 2 — Design** | hacky-hours-docs
+**Step 2 — Design** | hacky-hours-docs
 
 ---
 

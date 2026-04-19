@@ -1,4 +1,4 @@
-# Level 2 — Design
+# Step 2 — Design
 
 This folder contains the design documents for hacky-hours-docs itself.
 

@@ -1,6 +1,6 @@
 # PRODUCT_OVERVIEW.md
 
-**Level 1 — Ideation** | hacky-hours-docs
+**Step 1 — Ideation** | hacky-hours-docs
 
 ---
 
@@ -42,8 +42,8 @@ The design philosophy — safety-first defaults, free before paid, accessible by
 ## Non-Goals
 
 - This is not a code generator — it produces documentation, not application code
-- This is not a project management tool — it complements GitHub Issues (via `sync --issues`) but doesn't replace Linear or Jira
-- This is not a CI/CD system — `/hacky-hours sync` publishes releases but doesn't run tests or deployments
+- This is not a project management tool — it complements GitHub Issues (via `update 2`) but doesn't replace Linear or Jira
+- This is not a CI/CD system — `update 1` publishes releases but doesn't run tests or deployments
 - This is not opinionated about tech stack — it helps you choose, but doesn't prescribe
 
 ---

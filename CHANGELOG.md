@@ -7,6 +7,20 @@ Versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [2.1.0] — 2026-04-18
+
+`tools upgrade` now detects and fixes stale framework-authored boilerplate in existing `hacky-hours/` docs.
+
+### Added
+
+- **`tools upgrade` Flow C — Step 2b: Boilerplate migration** — scans all files under `hacky-hours/` (plus `.claudeignore` and `CLAUDE.md`) for pre-v2.0.0 patterns: "Level X" headers and old command names (`/hacky-hours audit`, `sync`, `upgrade`, `mode`, `onboard`, `link`, etc.). Reports findings grouped by file with suggested replacements. `/hacky-hours link` references are flagged for manual review rather than auto-replaced (command was removed in v2.0.0). Confirms before writing anything.
+
+### Fixed
+
+- **Self-documentation sweep** — applied the new boilerplate migration to this repo's own `hacky-hours/` artifacts: Level → Step headers in `PRODUCT_OVERVIEW.md`, `BACKLOG.md`, `02-design/README.md`, `ACCESSIBILITY.md`, `LICENSING.md`, `TESTING.md`; old command names in `ACCESSIBILITY.md`, `TESTING.md`, `ARCHITECTURE.md`, `SECURITY_PRIVACY.md`, and `PRODUCT_OVERVIEW.md`; removed dead Risk #4 (`link` command) from `SECURITY_PRIVACY.md` and renumbered remaining risks
+
+---
+
 ## [2.0.2] — 2026-04-18
 
 Fix hardcoded version strings in the `tools upgrade` skill prompt.

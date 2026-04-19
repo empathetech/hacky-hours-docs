@@ -120,4 +120,4 @@ Never use jargon without defining it first.
 
 To switch to engineer mode: /hacky-hours tools mode 2
 
-<!-- hacky-hours: v2.0.2 -->
+<!-- hacky-hours: v2.1.0 -->

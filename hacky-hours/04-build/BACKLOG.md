@@ -1,9 +1,9 @@
 # BACKLOG.md
 
-**Level 4 — Build** | hacky-hours-docs
+**Step 4 — Build** | hacky-hours-docs
 
 ---
 
 ## Next Milestone
 
-*Empty — v2.0.2 milestone complete.*
+*No tasks queued. Run `/hacky-hours step 5` to start the next iteration cycle.*

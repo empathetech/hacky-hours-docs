@@ -1,6 +1,6 @@
 # TESTING.md
 
-**Level 2 — Design** | hacky-hours-docs
+**Step 2 — Design** | hacky-hours-docs
 
 ---
 
@@ -27,7 +27,7 @@ hacky-hours-docs has no runtime code. The "product" is a command prompt and a se
 |-------|----------------|---------------|
 | Command routing | Does `/hacky-hours <arg>` land in the right section? | Manual invocation + eval scripts |
 | Scaffold output | Does scaffold produce the correct file structure? | Manual dry-run review |
-| Cross-reference integrity | Do links between docs point to real targets? | `/hacky-hours optimize` Phase 3 |
+| Cross-reference integrity | Do links between docs point to real targets? | `review 2` Phase 3 |
 | Command guidance accuracy | Does the help text match the actual behavior? | Manual review before release |
 | Generated Astro sites (v1.8.0+) | Do tour/quiz sites render correctly and meet WCAG 2.1 AA? | Manual browser testing + axe/Lighthouse |
 

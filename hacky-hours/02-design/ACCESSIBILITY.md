@@ -1,6 +1,6 @@
 # ACCESSIBILITY.md
 
-**Level 2 — Design** | hacky-hours-docs
+**Step 2 — Design** | hacky-hours-docs
 
 ---
 
@@ -37,13 +37,13 @@ Last full audit: 2026-03-21 (v1.3.0). Incremental review: 2026-03-30 (v1.5.0).
 
 ### v1.5.0 New Commands — Accessibility Notes
 
-- **`/hacky-hours optimize`** — may produce technical output (token counts, staleness metrics, cross-reference maps). Recommendations section should use plain language. Term "token" should be in GLOSSARY.md.
-- **`/hacky-hours pivot`** — uses metaphor ("pivot") that may not be obvious to non-business audiences. Help text explains it as "rethink product direction." Term should be in GLOSSARY.md.
-- **`/hacky-hours sync --issues`** — introduces concepts (labels, issue linking, `#<number>` annotations) that assume GitHub familiarity. The command explains each step, but a GLOSSARY entry for "GitHub Issue" and "label" would help.
+- **`review 2`** — may produce technical output (token counts, staleness metrics, cross-reference maps). Recommendations section should use plain language. Term "token" should be in GLOSSARY.md.
+- **`review 3`** — uses metaphor ("pivot") that may not be obvious to non-business audiences. Help text explains it as "rethink product direction." Term should be in GLOSSARY.md.
+- **`update 2`** — introduces concepts (labels, issue linking, `#<number>` annotations) that assume GitHub familiarity. The command explains each step, but a GLOSSARY entry for "GitHub Issue" and "label" would help.
 
 ### v1.7.0 Voice Mode — Accessibility Rationale
 
-The default voice mode is **non-technical** by design. This is an accessibility decision: non-technical users often don't know what signals to send to indicate their background, so they can't self-identify as needing plain-language explanations. Defaulting to accessible language ensures these users are never left behind. Engineers can opt in to technical mode explicitly via `/hacky-hours mode engineer`.
+The default voice mode is **non-technical** by design. This is an accessibility decision: non-technical users often don't know what signals to send to indicate their background, so they can't self-identify as needing plain-language explanations. Defaulting to accessible language ensures these users are never left behind. Engineers can opt in to technical mode explicitly via `tools mode engineer`.
 
 New terms from this feature to add to GLOSSARY.md:
 - "voice mode" — the current conversation style setting for the framework assistant
@@ -53,7 +53,7 @@ New terms from this feature to add to GLOSSARY.md:
 - **`/hacky-hours learn tour`** — the generated Astro tour site has not yet been evaluated for WCAG 2.1 AA compliance. Known items to verify before launch: heading hierarchy in generated pages, keyboard navigation through tour sections, alt text on any diagrams rendered from Mermaid, and accessible markdown editor in the feedback form (focus management, label associations, error states).
 - **`/hacky-hours learn onboard`** — conversation-only; no web UI. The GitHub Issue it creates should use plain-language titles and body text, not jargon. "Onboarding" label should be explained in the issue body for readers unfamiliar with the term.
 - **`/hacky-hours learn quiz`** — the generated quiz site needs WCAG 2.1 AA evaluation. Key concerns: quiz answer interactions must be keyboard-accessible, score/feedback must be announced to screen readers (ARIA live regions), and question text must not rely on color alone to convey meaning.
-- **`/hacky-hours upgrade`** — conversation-only; no web UI. Output should use plain language. The diff it produces (what's new vs. what you have) should be structured as a readable list, not a technical patch format.
+- **`tools upgrade`** — conversation-only; no web UI. Output should use plain language. The diff it produces (what's new vs. what you have) should be structured as a readable list, not a technical patch format.
 
 New terms to add to GLOSSARY.md:
 - "WCAG 2.1 AA" — already exists, but the entry should now mention it applies to the generated learn suite sites

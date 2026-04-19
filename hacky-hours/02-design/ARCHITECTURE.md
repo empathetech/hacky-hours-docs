@@ -135,7 +135,7 @@ hacky-hours/feedback/
 
 ## Upgrade Command (v1.8.0)
 
-`/hacky-hours upgrade` bridges the gap between updating the command and updating the user's project artifacts.
+`tools upgrade` bridges the gap between updating the command and updating the user's project artifacts.
 
 **What it does:**
 1. Reads the installed command version from the routing table
@@ -157,7 +157,7 @@ As of v1.7.0, the command supports a persistent voice mode that controls convers
 
 **How it works:**
 
-The `/hacky-hours mode` command toggles between voices and writes the current mode to a `## Hacky Hours Voice` section in the project's `CLAUDE.md`. On session start, the command reads this section and applies the mode. If no section is present, non-technical is assumed.
+The `tools mode` command toggles between voices and writes the current mode to a `## Hacky Hours Voice` section in the project's `CLAUDE.md`. On session start, the command reads this section and applies the mode. If no section is present, non-technical is assumed.
 
 Scaffolding writes `## Hacky Hours Voice: non-technical` to `CLAUDE.md` by default.
 
@@ -171,7 +171,7 @@ Two-way sync between BACKLOG.md and GitHub Issues (see [ADR: Two-Way Sync](decis
 - **Pull:** Issues → BACKLOG.md (propose additions)
 - **Conflict model:** Last-write-wins with diff shown to user; human confirms every change
 - **Identity:** `#<number>` in BACKLOG.md, `[hacky-hours]` label on Issues
-- **Invocation:** `/hacky-hours sync --issues`
+- **Invocation:** `update 2`
 
 ## Known Fragility
 
