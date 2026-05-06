@@ -167,9 +167,7 @@ Apply scaffold changes first, then boilerplate fixes:
 Add or update at the end of `CLAUDE.md`:
 
 ```markdown
-<!-- hacky-hours: v2.1.0 -->
+<!-- hacky-hours: v3.0.0 -->
 ```
 
-Report: "Upgrade complete. Your project is now up to date with v2.1.0."
-
-*Note: when v3.0.0 ships, the version marker and report message bump to v3.0.0. Slice 5 of the v3.0.0 migration handles this.*
+Report: "Upgrade complete. Your project is now up to date with v3.0.0."

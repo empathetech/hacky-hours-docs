@@ -1,6 +1,6 @@
 ---
 name: hacky-hours-dev
-description: Guide your project through the Hacky Hours framework (dev) v2.1.0
+description: Guide your project through the Hacky Hours framework (dev) v3.0.0
 disable-model-invocation: true
 argument-hint: [step | review | learn | update | tools | help]
 allowed-tools: Read Bash(git status*) Bash(git log*) Bash(git diff*) Bash(gh issue list*) Bash(gh release*)
@@ -76,7 +76,7 @@ Examples:
 When the user runs `/hacky-hours help` or `tools help`, print exactly this:
 
 ```
-Hacky Hours framework assistant — v2.1.0
+Hacky Hours framework assistant — v3.0.0
 
 Hacky Hours is a documentation framework for LLM-assisted app development.
 It guides you through five steps — Ideate, Design, Roadmap, Build, Iterate —
