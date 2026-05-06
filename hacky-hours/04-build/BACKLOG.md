@@ -31,7 +31,15 @@ Spawned from completed research spike (`02-design/research/2026-05-06-skill-vs-s
 
 Move `commands/hacky-hours.md` to `skills/hacky-hours/SKILL.md` with proper frontmatter (`disable-model-invocation: true`, `allowed-tools`, `argument-hint`). Update install scripts to write to the new path and clean up the old file. Update `hacky-hours-dev` similarly. Targets v3.0.0 due to install-path change.
 
-**Open question:** mechanical move only, or break SKILL.md into entrypoint + supporting files? Likely the latter — co-design with two-tier artifacts.
+**Scope (combined with two-tier artifacts spike):**
+- Refactor SKILL.md into entrypoint + bundled supporting files (per-step guidance, per-design-doc templates as summary + deep pairs)
+- Update install scripts (`install.sh`, `install.ps1`) for new path; clean up old `commands/hacky-hours.md`
+- **Update README.md** to document:
+  - The new skill-based architecture (entrypoint + bundled files; two-tier templates)
+  - Migration instructions for users on v2.x → v3.0.0 (re-run install script; old file is auto-removed)
+  - Why the split exists (human summary vs. AI deep doc — connects to the two-tier philosophy)
+- Update `runbooks/using-this-repo/import-as-resource.md` if path references changed
+- Add CHANGELOG entry under `[3.0.0]` with breaking-change callout
 
 ---
 

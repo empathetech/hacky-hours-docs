@@ -177,9 +177,11 @@ Two-way sync between BACKLOG.md and GitHub Issues (see [ADR: Two-Way Sync](decis
 
 The slash command prompt (`.claude/commands/hacky-hours-dev.md`) is the most complex component. As of v2.0.0, the prompt has been restructured: five parent command groups replace a flat list of 19 commands, "Level" language replaced with "Step" throughout, and the prompt reduced from ~2,100 to ~1,470 lines. Prompt size should be re-measured after each release.
 
+> **Migration planned for v3.0.0:** The single-file slash command will be replaced with a SKILL.md skill bundling supporting files (per-step guidance, per-design-doc templates). See [ADR: Migrate to SKILL.md format](decisions/2026-05-06-migrate-to-skill-format.md). The "Single-file architecture" fragility below is the binding constraint that motivates the migration.
+
 Remaining fragility:
 - **No gradual rollout** — changes to the command prompt affect every user on next install. There is no canary or staged release mechanism.
-- **Single-file architecture** — all routing, guidance, and workflow logic lives in one markdown file. The v2.0.0 restructure reduced size and improved organization, but the file will grow with future features. Monitor whether a split into per-command files becomes warranted.
+- **Single-file architecture** — all routing, guidance, and workflow logic lives in one markdown file. The v2.0.0 restructure reduced size and improved organization, but the file will grow with future features. *Resolution planned in v3.0.0 via skill bundling — see ADR linked above.*
 - **Breaking changes on major versions** — v2.0.0 broke all v1.x command entry points. Users must relearn paths after updating. The `tools upgrade` command mitigates this for CLAUDE.md references, but there is no automated migration for user muscle memory.
 - **Cross-tool portability** — the slash command is Claude Code–specific. Other tools (Cursor, Windsurf) get framework behavior through CLAUDE.md project instructions, not the command itself. The two surfaces need to stay in sync.
 - **Node.js dependency (v1.8.0)** — static site generation requires Node.js. The conversation-first design means the framework degrades gracefully without it, but this is the first external runtime dependency the framework has introduced. Worth monitoring whether it creates friction.
