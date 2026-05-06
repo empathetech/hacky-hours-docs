@@ -32,11 +32,11 @@ Examples:
 - "help <command>"                      → print help for that specific command, then stop
 - "step"                                → list all steps, then stop
 - "step 0"                              → begin guided session in dry-run mode (no file writes)
-- "step 1" | "step ideate" | "ideate"       → skip to Step 1 guidance
-- "step 2" | "step design" | "design"       → skip to Step 2 guidance
-- "step 3" | "step roadmap" | "roadmap"     → skip to Step 3 guidance
-- "step 4" | "step build" | "build"         → skip to Step 4 guidance
-- "step 5" | "step iterate" | "iterate"     → skip to Step 5 guidance
+- "step 1" | "step ideate" | "ideate"       → Read `${CLAUDE_SKILL_DIR}/steps/01-ideate.md` and follow it
+- "step 2" | "step design" | "design"       → Read `${CLAUDE_SKILL_DIR}/steps/02-design.md` and follow it
+- "step 3" | "step roadmap" | "roadmap"     → Read `${CLAUDE_SKILL_DIR}/steps/03-roadmap.md` and follow it
+- "step 4" | "step build" | "build"         → Read `${CLAUDE_SKILL_DIR}/steps/04-build.md` and follow it
+- "step 5" | "step iterate" | "iterate"     → Read `${CLAUDE_SKILL_DIR}/steps/05-iterate.md` and follow it
 - "review"                              → list review modes, then stop
 - "review 1" | "review audit"           → skip to Review 1 guidance (audit)
 - "review 2" | "review optimize"        → skip to Review 2 guidance (optimize)
@@ -572,160 +572,17 @@ To switch to engineer mode: /hacky-hours tools mode 2
 
 ---
 
-## Step 1 — Ideation
+## Steps 1–5
 
-**Context:** If `IDEATION.md` already exists under ROOT_PATH, read it before asking any questions — don't ask the user to repeat what they've already written.
+Each step is documented in its own supporting file. When the user routes to a step, Read the corresponding file and follow the guidance there:
 
-**Purpose:** Get ideas out of the user's head and into structured form.
-
-**IDEATION.md** is a free-writing space. No rules — just capture everything. Prompt the user with:
-- "Who is the first person you'd want to use this, and what would they do with it?"
-- "What problem have you personally experienced that this solves?"
-- "What would have to be true for this to be considered a success in one year?"
-
-**PRODUCT_OVERVIEW.md** synthesizes IDEATION.md into five W answers plus a Constraints & Values section:
-- **Who** — target audience (specific, not "anyone")
-- **What** — what the product does and what form it takes
-- **Where** — platform (mobile, web, desktop, API, etc.)
-- **When** — rough timeline or priority
-- **Why** — the problem it solves and why it matters
-- **Constraints & Values** — licensing intent, privacy stance, infrastructure preference
-
-Go one W at a time. Ask focused questions. Reflect the user's words back to them.
-
-After completing the 5Ws, always ask the Constraints & Values questions before moving to Step 2:
-
-1. **Licensing:** "Do you want your code to be open source — meaning others can see, use, and build on it — or do you want to keep it private? Are you planning to charge money for it?"
-2. **Privacy:** "How much user data does this product really need to collect? Less is almost always safer, cheaper, and easier to comply with legally."
-3. **Infrastructure:** "Do you want someone else to manage the servers, or are you comfortable managing your own?"
-
-These answers seed the `LICENSING.md` and `ARCHITECTURE.md` work in Step 2.
-
-**Done when:** Someone unfamiliar with the project could read PRODUCT_OVERVIEW.md and understand what's being built, including its core values and constraints. ✅
-
----
-
-## Step 2 — Design
-
-**Context:** Read `01-ideate/PRODUCT_OVERVIEW.md` under ROOT_PATH — specifically the Constraints & Values section. Also note which design docs already exist.
-
-**Purpose:** Define how the product works in enough detail to build it.
-
-Start by asking which documents this project actually needs:
-
-| Document | Use when... |
-|----------|-------------|
-| ARCHITECTURE.md | The product has multiple systems or services |
-| DATA_MODEL.md | The product stores or transforms data of any kind |
-| USER_JOURNEYS.md | You need to map how users move through the product |
-| STYLE_GUIDE.md | The product has a UI |
-| ACCESSIBILITY.md | The product has a UI (almost always) |
-| MARKET_FIT.md | You want to validate who the users are and why they'd choose this |
-| BUSINESS_LOGIC.md | The product has rules, calculations, or domain-specific behavior |
-| SECURITY_PRIVACY.md | The product handles user data, auth, or payments (almost always) |
-| LICENSING.md | Almost always — ask early, before dependencies are chosen |
-| TESTING.md | Almost always — test strategy and definition of done |
-
-For each document, work through it section by section using questions. Generate Mermaid diagrams proactively — ERDs for data models, flowcharts for user journeys, architecture diagrams for system design.
-
-**When a design decision changes during iteration:** write an Architecture Decision Record (ADR) in `02-design/decisions/` named by date and topic (e.g., `2026-03-20-switch-to-postgres.md`). Update only the affected sections of the original doc, and add a note pointing to the ADR.
-
-**Done when:** A new collaborator could read these docs and understand how the product is meant to work. ✅
-
----
-
-## Step 3 — Roadmap
-
-**Context:** Read all Step 2 design documents that exist under ROOT_PATH. If `ROADMAP.md` already exists, read it and identify what's already placed.
-
-**Purpose:** Sequence what to build and prioritize ruthlessly.
-
-List every feature mentioned across the Step 2 documents. Then categorize each:
-
-- **MVP** — the smallest version that proves the core value proposition. Push back hard. "Can the product prove its value without this?" If yes, it's not MVP.
-- **V1** — MVP plus what's needed for it to be genuinely useful
-- **V2+** — valuable but not required for V1
-
-Milestones should be outcome-based ("users can complete a purchase") not task-based ("implement checkout UI").
-
-After the MVP list is set, ask: "Based on what's in the MVP, how long do you realistically think this would take to build? What are the most complex or risky parts?" If the answer suggests months, the MVP is probably still too big.
-
-**Done when:** Every planned feature has a home (MVP, V1, or V2+), and the MVP is small enough to actually ship and learn from. ✅
-
----
-
-## Step 4 — Build
-
-**Context:** Read `04-build/BACKLOG.md` to see what's queued. For each task, read the relevant design doc sections — particularly `SECURITY_PRIVACY.md` and `LICENSING.md`. If `ROADMAP.md` exists, confirm the task belongs to the current milestone before starting.
-
-**Purpose:** Implement incrementally, with review at each step, aligned to design decisions.
-
-Before starting any task:
-1. Read the relevant design doc sections — they constrain the implementation
-2. If a design doc doesn't address something you need to implement, surface it to the user first — it may need to be added to the design doc
-
-The task cycle:
-1. Pick a task from BACKLOG.md
-2. Create a branch named for the task (e.g., `feat/user-signup`, `fix/login-error`)
-3. Implement — referencing design documents throughout
-4. Before marking complete, verify against the pre-merge checklist
-5. Commit with a clear message, push, open a pull request for human review
-6. Merge, update CHANGELOG.md, tag a release when a milestone is complete
-
-**Milestone housekeeping (run when BACKLOG.md is empty):**
-- Append milestone entry to CHANGELOG.md; move entries older than 3 releases to `archive/changelog/`
-- Move the completed roadmap milestone section to `archive/roadmap/`
-- Update any design docs that changed; write ADRs for significant decisions
-- Move `IDEATION.md` to `archive/` if not already done
-- Review `.claudeignore` — anything newly cold that should be excluded?
-- Tag the release
-
-**Done when:** All milestone tasks are merged, CHANGELOG.md is updated, and you've cut a tagged release. 🎉
-
----
-
-## Step 5 — Iterate
-
-**Context:** Read `04-build/CHANGELOG.md` to understand what shipped in the last release. Read `04-build/BACKLOG.md` to see if anything is already queued. Skim the Step 2 design docs.
-
-**Purpose:** Capture bugs, ideas, and improvements after a release, amend the docs that need updating, and queue the work.
-
-**Phase 1: Capture**
-
-Before asking the user anything, check `ROOT_PATH/feedback/` for any feedback files (`feedback-<username>-<timestamp>.md`). If files exist, read and summarize them. Tell the user: "I found N feedback file(s) from recent learn sessions. Here's what they say: [summary]."
-
-Then ask the user to brain-dump freely: bugs, feedback, ideas for improvements. Write everything into `ITERATION.md` under ROOT_PATH. No filtering yet — just capture.
-
-Prompts:
-- "What's broken or annoying that you've noticed since the last release?"
-- "What did users ask for that you didn't have time to build?"
-- "What would you change about the design now that you've seen it work in practice?"
-
-**Phase 2: Synthesize**
-
-Read `ITERATION.md` alongside the existing design docs. For each item:
-- Does this change how the product works? → Flag the relevant design doc for amendment
-- Does this introduce a new design decision? → Note that an ADR will be needed
-- Is this purely an implementation fix? → Goes straight to backlog
-
-**Lightweight review check:** While reviewing design docs, flag any that look oversized, stale, or mostly placeholder. If multiple docs are flagged, suggest running `/hacky-hours review 2` after the iteration cycle completes.
-
-**Phase 3: Prioritize**
-
-Categorize each item:
-- **Hotfix** — broken in production, needs immediate attention
-- **Next milestone** — important enough to be in the next planned release
-- **Backlog** — valid but not urgent; add to BACKLOG.md without a milestone assignment
-
-**Phase 4: Amend design docs**
-
-For each flagged design doc, work through the needed changes. Write ADRs for significant decisions. Update affected sections.
-
-**Phase 5: Build**
-
-Proceed with the Step 4 build cycle using the updated backlog.
-
-**Done when:** ITERATION.md has been fully triaged, design docs reflect current reality, and new items are in BACKLOG.md. Move `ITERATION.md` to `ROOT_PATH/archive/` when complete. ✅
+| Step | File |
+|------|------|
+| Step 1 — Ideation | `${CLAUDE_SKILL_DIR}/steps/01-ideate.md` |
+| Step 2 — Design | `${CLAUDE_SKILL_DIR}/steps/02-design.md` |
+| Step 3 — Roadmap | `${CLAUDE_SKILL_DIR}/steps/03-roadmap.md` |
+| Step 4 — Build | `${CLAUDE_SKILL_DIR}/steps/04-build.md` |
+| Step 5 — Iterate | `${CLAUDE_SKILL_DIR}/steps/05-iterate.md` |
 
 ---
 
