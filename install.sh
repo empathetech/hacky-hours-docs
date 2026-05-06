@@ -2,6 +2,7 @@
 set -euo pipefail
 
 REPO="empathetech/hacky-hours-docs"
+BRANCH="${HH_BRANCH:-main}"
 DEV_SUBPATH=".claude/skills/hacky-hours-dev"
 SKILL_NAME="hacky-hours"
 SKILLS_DIR="$HOME/.claude/skills"
@@ -11,8 +12,8 @@ OLD_COMMAND_FILE="$HOME/.claude/commands/hacky-hours.md"
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
-echo "Downloading hacky-hours from $REPO..."
-curl -fsSL "https://github.com/$REPO/archive/refs/heads/main.tar.gz" \
+echo "Downloading hacky-hours from $REPO ($BRANCH)..."
+curl -fsSL "https://github.com/$REPO/archive/refs/heads/$BRANCH.tar.gz" \
   | tar -xz -C "$TMP" --strip-components=1
 
 if [ ! -d "$TMP/$DEV_SUBPATH" ]; then

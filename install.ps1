@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $repo       = 'empathetech/hacky-hours-docs'
+$branch     = if ($env:HH_BRANCH) { $env:HH_BRANCH } else { 'main' }
 $devSubpath = '.claude\skills\hacky-hours-dev'
 $skillName  = 'hacky-hours'
 $skillsDir  = Join-Path $env:USERPROFILE '.claude\skills'
@@ -11,9 +12,9 @@ $tmp = Join-Path $env:TEMP ("hacky-hours-install-" + [guid]::NewGuid())
 New-Item -ItemType Directory -Path $tmp -Force | Out-Null
 
 try {
-    Write-Host "Downloading hacky-hours from $repo..."
-    $zipPath = Join-Path $tmp 'main.zip'
-    Invoke-WebRequest -Uri "https://github.com/$repo/archive/refs/heads/main.zip" -OutFile $zipPath
+    Write-Host "Downloading hacky-hours from $repo ($branch)..."
+    $zipPath = Join-Path $tmp 'archive.zip'
+    Invoke-WebRequest -Uri "https://github.com/$repo/archive/refs/heads/$branch.zip" -OutFile $zipPath
     Expand-Archive -Path $zipPath -DestinationPath $tmp -Force
 
     # GitHub zip extracts to "$tmp\hacky-hours-docs-main\..." — find that top-level dir.
