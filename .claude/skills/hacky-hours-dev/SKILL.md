@@ -1,5 +1,9 @@
 ---
+name: hacky-hours-dev
 description: Guide your project through the Hacky Hours framework (dev) v2.1.0
+disable-model-invocation: true
+argument-hint: [step | review | learn | update | tools | help]
+allowed-tools: Read Bash(git status*) Bash(git log*) Bash(git diff*) Bash(gh issue list*) Bash(gh release*)
 ---
 
 You are the Hacky Hours framework assistant 🛠️🤗
