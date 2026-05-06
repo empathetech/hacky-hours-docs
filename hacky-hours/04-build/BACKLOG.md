@@ -12,24 +12,32 @@
 
 ## Backlog (unscheduled)
 
-### Research: Skill format vs. slash command format
+### ADR: Migrate to SKILL.md format
 
-**Type:** Research spike
-**Branch:** `research/skill-vs-slash-command`
+**Type:** ADR drafting
+**Branch:** `docs/adr-skill-migration`
 
-The Claude Code `SKILL.md` format exists alongside the slash command format (`.claude/commands/`). This repo currently uses slash commands exclusively. A `hacky-hours` skill and `hacky-hours-dev` skill also exist in the session environment — unclear whether these were created separately or are auto-derived.
+Spawned from completed research spike (`02-design/research/2026-05-06-skill-vs-slash-command.md`). Draft an ADR capturing the decision to migrate from the slash command format to SKILL.md, the rationale (Anthropic's official direction; bundled supporting files unlock the two-tier artifacts work), and consequences (install path change, v3.0.0 bump).
 
-**Questions to answer:**
-- What does the SKILL.md format provide that the slash command format doesn't?
-- Are skills the forward-looking mechanism for this kind of framework assistant?
-- Is there meaningful overlap between the two, or do they serve distinct purposes?
-- If skills are the preferred format, what would a migration look like and what version would it warrant?
+**Output:** `02-design/decisions/YYYY-MM-DD-migrate-to-skill-format.md`.
 
-**Output:** Short writeup. Either dies, or spawns an ADR + migration task.
+---
+
+### Migration: Slash command → SKILL.md format (v3.0.0)
+
+**Type:** Implementation
+**Branch:** `feat/migrate-to-skill-format`
+**Gated on:** ADR approval + two-tier artifacts design spike (co-design recommended)
+
+Move `commands/hacky-hours.md` to `skills/hacky-hours/SKILL.md` with proper frontmatter (`disable-model-invocation: true`, `allowed-tools`, `argument-hint`). Update install scripts to write to the new path and clean up the old file. Update `hacky-hours-dev` similarly. Targets v3.0.0 due to install-path change.
+
+**Open question:** mechanical move only, or break SKILL.md into entrypoint + supporting files? Likely the latter — co-design with two-tier artifacts.
 
 ---
 
 ### Design spike: Two-tier design artifacts (human summary + deep doc)
+
+**Coupled with:** Skill migration above — bundled supporting files in SKILL.md format are the natural home for two-tier templates. Recommend co-designing.
 
 **Type:** Design exploration → ADR
 **Branch:** `design/two-tier-artifacts`
